@@ -49,7 +49,7 @@ class App extends Component {
     return (
       <>
         <Home />
-        <Router>
+        {/* <Router>
           <Skeleton
             path="/"
             handleLogin={this.handleLogin}
@@ -57,7 +57,7 @@ class App extends Component {
             userId={this.state.userId}
           />
           <NotFound default />
-        </Router>
+        </Router> */}
       </>
     );
   }
