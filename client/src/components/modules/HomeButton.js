@@ -9,7 +9,12 @@ class HomeButton extends Component {
     componentDidMount() {}
 
     render() {
-        return (<button>{this.props.text}</button>);
+        return (
+        // TODO: fix link destination
+        <Link to="/"> 
+            <button>{this.props.text}</button>
+        </Link>
+        );
     }
 }
 
