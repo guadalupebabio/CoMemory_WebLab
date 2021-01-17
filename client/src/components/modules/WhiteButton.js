@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { Link } from "@reach/router";
 
-import "./HomeButton.css";
+import "./WhiteButton.css";
 
 /**
  * 
@@ -12,7 +12,7 @@ import "./HomeButton.css";
  * 
  */
 
-class HomeButton extends Component {
+class WhiteButton extends Component {
     constructor(props) {
         super(props);
     }
@@ -22,10 +22,10 @@ class HomeButton extends Component {
     render() {
         return (
         <Link to={this.props.linkDestination}> 
-            <button className="HomeButton-style u-pointer">{this.props.text}</button>
+            <button className="WhiteButton-style u-pointer">{this.props.text}</button>
         </Link>
         );
     }
 }
 
-export default HomeButton;
+export default WhiteButton;
