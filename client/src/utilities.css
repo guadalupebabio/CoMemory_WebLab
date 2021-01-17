@@ -49,9 +49,9 @@ body {
   color: var(--white);
 }
 
-form {
+/* form {
   flex-grow: 1;
-}
+} */
 
 form ul {
   list-style-type: none;

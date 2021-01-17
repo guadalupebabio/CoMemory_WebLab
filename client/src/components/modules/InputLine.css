@@ -8,7 +8,7 @@
 }
 
 .InputLine-style::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.536);
 }
 
 /* TODO: fix autofill color */

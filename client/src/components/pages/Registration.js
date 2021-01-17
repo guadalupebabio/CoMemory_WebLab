@@ -22,7 +22,7 @@ class Registration extends Component {
   render() {
     return (
       <>
-      <div id="Registration-container" className="u-flex-column u-flex-alignCenter">
+      <div id="Registration-container" className="u-flexColumn u-flex-justifyCenter u-flex-alignCenter">
         <h1>register</h1>
         {/* TODO: fix action attribute */}
           <form action="..." method="post"> 
@@ -36,23 +36,29 @@ class Registration extends Component {
               <li>
                 <InputLine typeValue="password" idValue="password" placeholderValue="password" />
               </li>
+              <li>
+                {/* insert button component here */}
+              </li>
+              <li>
+                {this.props.userId ? (
+                  <GoogleLogout
+                    clientId={GOOGLE_CLIENT_ID}
+                    buttonText="Logout"
+                    onLogoutSuccess={this.props.handleLogout}
+                    onFailure={(err) => console.log(err)}
+                  />
+                ) : (
+                  <GoogleLogin
+                    clientId={GOOGLE_CLIENT_ID}
+                    buttonText="Login"
+                    onSuccess={this.props.handleLogin}
+                    onFailure={(err) => console.log(err)}
+                  />
+                )}
+              </li>
             </ul>
           </form>
-          {this.props.userId ? (
-            <GoogleLogout
-              clientId={GOOGLE_CLIENT_ID}
-              buttonText="Logout"
-              onLogoutSuccess={this.props.handleLogout}
-              onFailure={(err) => console.log(err)}
-            />
-          ) : (
-            <GoogleLogin
-              clientId={GOOGLE_CLIENT_ID}
-              buttonText="Login"
-              onSuccess={this.props.handleLogin}
-              onFailure={(err) => console.log(err)}
-            />
-          )}
+          
       </div>
       
         {/* <h1>Good luck on your project :)</h1>

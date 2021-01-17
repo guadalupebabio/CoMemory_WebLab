@@ -22,7 +22,7 @@ class InputLine extends Component {
 
     render() {
         return (
-            <input className="InputLine-style" type={this.props.typeValue} id={this.props.idValue} placeholder={this.props.placeholderValue}/>
+            <input className="InputLine-style" type={this.props.typeValue} id={this.props.idValue} placeholder={this.props.placeholderValue} />
         );
     }
 }
