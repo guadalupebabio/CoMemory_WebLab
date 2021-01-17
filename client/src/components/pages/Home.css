@@ -1,0 +1,7 @@
+html {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../imgs/homeBackground.png") no-repeat center center fixed;
+}
+
+#buttonContainer {
+    height: 100vh;
+}

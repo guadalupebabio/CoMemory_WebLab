@@ -1,0 +1,17 @@
+.HomeButton-style {
+    border: var(--white) 2px solid;
+    border-radius: 25px;
+    padding: var(--s) var(--l);
+    margin: var(--xs);
+
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+    background: none;
+}
+
+.HomeButton-style:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    transition-duration: 0.2s;
+}
