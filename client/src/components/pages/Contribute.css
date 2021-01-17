@@ -1,0 +1,93 @@
+html, head {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+}
+
+html, body {
+  margin: 30px;
+  padding: 50px;
+  background-color: black;
+  color: white;
+}
+
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: black;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  font-weight:bold;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+/* Right-aligned section inside the top navigation */
+.navbar-right {
+  float: right;
+}
+
+
+/* Style Form */
+.form {
+  margin-left: 60px;
+  margin-top: 20px;
+  width: 100%;
+  color: white;
+  overflow: auto;
+  float: left;
+  text-align: justify;
+  padding: 0px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: black;
+  border-bottom: 2px solid white;
+}
+
+
+
+
+
+
+/* Style of the Button*/
+.button {
+  background-color: white;
+  color: black;
+  padding: 5px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  
+}
