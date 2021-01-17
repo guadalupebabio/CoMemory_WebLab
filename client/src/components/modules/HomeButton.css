@@ -1,0 +1,4 @@
+.HomeButton-style {
+    border: var(--white) 3px solid;
+    border-radius: var(--small);
+}
