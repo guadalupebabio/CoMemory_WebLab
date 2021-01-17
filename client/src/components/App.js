@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
+import HomeButton from "./modules/HomeButton.js";
 
 import "../utilities.css";
 
@@ -47,6 +48,9 @@ class App extends Component {
   render() {
     return (
       <>
+      {/*TODO: Fix the link desinations*/}
+        <HomeButton text="EXPLORE THE SPACE" linkDestination="/" />
+        <HomeButton text="CREATE A STAR" linkDestination="/" />
         <Router>
           <Skeleton
             path="/"
