@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+import InputLine from "../modules/InputLine";
 
 import "../../utilities.css";
 import "./Registration.css";
@@ -21,21 +22,39 @@ class Registration extends Component {
   render() {
     return (
       <>
-        {this.props.userId ? (
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Logout"
-            onLogoutSuccess={this.props.handleLogout}
-            onFailure={(err) => console.log(err)}
-          />
-        ) : (
-          <GoogleLogin
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Login"
-            onSuccess={this.props.handleLogin}
-            onFailure={(err) => console.log(err)}
-          />
-        )}
+      <div id="Registration-container" className="u-flex-column u-flex-alignCenter">
+        <h1>register</h1>
+        {/* TODO: fix action attribute */}
+          <form action="..." method="post"> 
+            <ul>
+              <li>
+                <InputLine typeValue="text" idValue="email" placeholderValue="somebody@example.com" />
+              </li>
+              <li>
+                <InputLine typeValue="text" idValue="username" placeholderValue="username" />
+              </li>
+              <li>
+                <InputLine typeValue="password" idValue="password" placeholderValue="password" />
+              </li>
+            </ul>
+          </form>
+          {this.props.userId ? (
+            <GoogleLogout
+              clientId={GOOGLE_CLIENT_ID}
+              buttonText="Logout"
+              onLogoutSuccess={this.props.handleLogout}
+              onFailure={(err) => console.log(err)}
+            />
+          ) : (
+            <GoogleLogin
+              clientId={GOOGLE_CLIENT_ID}
+              buttonText="Login"
+              onSuccess={this.props.handleLogin}
+              onFailure={(err) => console.log(err)}
+            />
+          )}
+      </div>
+      
         {/* <h1>Good luck on your project :)</h1>
         <h2> What we provide in this skeleton</h2>
         <ul>
