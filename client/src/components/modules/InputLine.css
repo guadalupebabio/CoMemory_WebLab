@@ -1,16 +1,18 @@
-input {
+.InputLine-style {
     border: none;
     background-color: transparent;
     border-bottom: 2px solid var(--white);
 
     color: var(--white);
+    font-family: inherit;
 }
 
-input::placeholder {
+.InputLine-style::placeholder {
     color: white;
 }
 
-input:autofill,
+/* TODO: fix autofill color */
+/* input:autofill,
 input:autofill:hover, 
 input:autofill:focus,
 textarea:autofill,
@@ -22,4 +24,4 @@ select:autofill:focus {
     background: transparent;
     border: none;
     border-bottom: 2px solid var(--white);
-}
+} */
