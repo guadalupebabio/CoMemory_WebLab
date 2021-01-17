@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import WhiteButton from "../modules/WhiteButton.js";
+import InputLine from "../modules/InputLine";
 
+import "../../utilities.css";
 import "./Contribute.css";
 
 class Contribute extends Component {
@@ -9,46 +11,47 @@ class Contribute extends Component {
     }
 
     componentDidMount() {
-        document.title = "Contribute";
+        // remember -- api calls go here!
     }
 
     render() {
         return (
-
-            
-            // {/* <label for="name">Name:</label> */}
-            // {/* <input type="text" id="name" placeholder="Name"/>  */}
-            
-
-                
+            <div id="Form-container" className="form">
+                <h1>Hi, User</h1>
+                    <form action="..." method="post"> 
+                        <ul>
+                            <label for="name">Name</label>
+                            <li>
+                                <InputLine typeValue="text" idValue="name" placeholderValue="Name" />
+                            </li>
+                            <label for="date">A Date (birth, special date, death, etc.)</label>
+                            <li>
+                                <InputLine typeValue="text" idValue="date" placeholderValue="mm/dd/yyyy" />
+                            </li>
+                            <label for="place">A Place (favorite, hometown, resting place, etc.)</label>
+                            <li>
+                                <InputLine typeValue="text" idValue="place" placeholderValue="Location" />
+                            </li>
+                            <label for="message">A Message</label>
+                            <li>
+                                <InputLine typeValue="text" idValue="name" placeholderValue="Say something" />
+                            </li>
+                        </ul>
+                    </form>                
                 <div>
                 {/*TODO: Fix the link desinations*/}
                 <WhiteButton text="Submit" linkDestination="/" />
                 </div>
-            
+            </div>  
         )
     }
 }
 
 export default Contribute;
 
-{/* <div className="form">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" placeholder="Name">
-                </div>  
+{/*
 
-                /* <div class="form">
-                    <label for="date">A Date (birth, special date, death, etc.)</label><br>
-                    <input type="text" id="date" placeholder="mm/dd/yyyy">
-                </div>  
-                <div class="form">
-                    <label for="place">A Place (favorite, hometown, resting place, etc.)</label><br>
-                    <input type="text" id="place" placeholder="Location">
-                </div>
-                <div class="form">
-                    <label for="message">A Message</label><br>
-                    <input type="text" id="message" placeholder="Say something">
-                </div>
+            
                 
                 <input type="checkbox" id="privacy" value="private">
                 <label for="privacy"> Check the box if you want your entry to be private</label><br> */}
