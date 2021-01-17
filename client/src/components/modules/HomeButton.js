@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { Link } from "@reach/router";
 import "./HomeButton.css";
 
 class HomeButton extends Component {
