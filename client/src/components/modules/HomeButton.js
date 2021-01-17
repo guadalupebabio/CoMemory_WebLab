@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { Link } from "@reach/router";
+
 import "./HomeButton.css";
+
+/**
+ * 
+ * Proptypes
+ * @param {string} text
+ * @param {string} linkDestination
+ * 
+ */
 
 class HomeButton extends Component {
     constructor(props) {
@@ -12,9 +21,8 @@ class HomeButton extends Component {
 
     render() {
         return (
-        // TODO: fix link destination
-        <Link to="/"> 
-            <button>{this.props.text}</button>
+        <Link to={this.props.linkDestination}> 
+            <button className="HomeButton-style">{this.props.text}</button>
         </Link>
         );
     }

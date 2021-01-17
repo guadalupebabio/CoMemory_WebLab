@@ -1,4 +1,13 @@
 .HomeButton-style {
-    border: var(--white) 3px solid;
-    border-radius: var(--small);
+    border: var(--black) 2px solid;
+    border-radius: 25px;
+    padding: var(--s) var(--l);
+
+    color: var(--black);
+    font-family: 'Open Sans', sans-serif;
+    background: none;
+}
+
+.HomeButton-style:hover {
+    background: black;
 }
