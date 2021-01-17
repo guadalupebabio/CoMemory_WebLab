@@ -1,0 +1,25 @@
+input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--white);
+
+    color: var(--white);
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:autofill,
+input:autofill:hover, 
+input:autofill:focus,
+textarea:autofill,
+textarea:autofill:hover,
+textarea:autofill:focus,
+select:autofill,
+select:autofill:hover,
+select:autofill:focus {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--white);
+}
