@@ -1,0 +1,18 @@
+#Registration-container {
+    background: black;
+    height: 100vh;
+    width: 100vw;
+}
+
+#Registration-container h1 {
+    font-size: var(--l);
+    font-weight: normal;
+}
+
+#Registration-container form {
+    min-width: 170px;
+}
+
+#Registration-container li + li {
+    margin-top: 1em;
+}
