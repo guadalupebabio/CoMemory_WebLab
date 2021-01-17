@@ -1,0 +1,18 @@
+.WhiteButton-style {
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.WhiteButton-style:hover {
+    font-weight:bold;
+}
