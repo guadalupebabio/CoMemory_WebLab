@@ -1,0 +1,99 @@
+
+html, head {
+    background-color: black;
+  }
+  
+  h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  /* Style Body */
+  html, body {
+    margin: 30;
+    padding: 50px;
+    background-color: black;
+  }
+  canvas {
+    display: block;
+  }
+  
+  /* Style Entries */
+  .comment {
+    width: 100%;
+    color: white;
+    overflow: auto;
+    float: left;
+    text-align: justify;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+  .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+  }
+  img {
+    border-radius: 5%;
+    border: 2px solid white;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: center;
+  }
+  
+  /* Style the navigation bar */
+  .navbar {
+    width: 100%;
+    background-color: black;
+    overflow: auto;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    font-weight:bold;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+  
+  /* Right-aligned section inside the top navigation */
+  .navbar-right {
+    float: right;
+  }
+  
+  /* Style of the Button*/
+  .button {
+    background-color: gray;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-weight:bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 3px solid white;
+    
+  }

@@ -3,6 +3,8 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Home from "./pages/Home.js";
 import Registration from "./pages/Registration.js";
+import Contribute from "./pages/Contribute.js";
+import PersonalSpace from "./pages/PersonalSpace.js";
 
 import "../utilities.css";
 
@@ -56,6 +58,9 @@ class App extends Component {
             handleLogout={this.handleLogout}
             userId={this.state.userId}
           />
+          <Contribute path="/contribute" />
+          <PersonalSpace path="/personalspace" />
+          
           <NotFound default />
         </Router>
       </>
