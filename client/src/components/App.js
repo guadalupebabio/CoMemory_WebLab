@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
-import Skeleton from "./pages/Skeleton.js";
+import Registration from "./pages/Registration.js";
 import Home from "./pages/Home.js";
 
 import "../utilities.css";
@@ -48,16 +48,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <Home />
-        {/* <Router>
-          <Skeleton
-            path="/"
+        <Router>
+          <Home path="/" />
+          <Registration
+            path="/register"
             handleLogin={this.handleLogin}
             handleLogout={this.handleLogout}
             userId={this.state.userId}
           />
           <NotFound default />
-        </Router> */}
+        </Router>
       </>
     );
   }
