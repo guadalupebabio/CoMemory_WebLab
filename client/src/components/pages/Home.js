@@ -15,7 +15,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div id="buttonContainer" className="u-flexColumn u-flex-alignCenter u-flex-justifyCenter">
+            <div id="Home-container" className="u-flexColumn u-flex-alignCenter u-flex-justifyCenter">
                 <h1>A virtual space to honor and grieve loved ones</h1>
                 <HomeButton text="EXPLORE THE SPACE" linkDestination="/" />
                 <HomeButton text="CREATE A STAR" linkDestination="/register" />
