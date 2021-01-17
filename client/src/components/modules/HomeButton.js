@@ -22,7 +22,7 @@ class HomeButton extends Component {
     render() {
         return (
         <Link to={this.props.linkDestination}> 
-            <button className="HomeButton-style">{this.props.text}</button>
+            <button className="HomeButton-style u-pointer">{this.props.text}</button>
         </Link>
         );
     }
