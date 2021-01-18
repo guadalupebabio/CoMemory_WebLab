@@ -6,7 +6,6 @@ import P5Wrapper from "react-p5-wrapper"
 import ReactDOM from 'react-dom';
 import sketch from '../modules/sketch';
 
-
 import "../../utilities.css";
 import "./Flower.css";
 
@@ -23,10 +22,12 @@ class Flower extends Component {
 
 
     render() {
+        //const attrs = {shape:0.3}
         return (
+            
             <div>
                 {/*TODO: Fix the link desinations*/}
-                <P5Wrapper sketch={sketch} />
+                <P5Wrapper sketch={sketch} /> 
                 <DownloadButton text="Download the flowers" linkDestination="/yourcontribution" />
                 <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/" />
                 </div>

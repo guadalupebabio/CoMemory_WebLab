@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+
 
 import "./WhiteButton.css";
 
@@ -18,11 +18,9 @@ class DownloadButton extends Component {
     componentDidMount() {}
 
     render() {
-        function clickHandler(){
-            console.log("old Button clicked")
-        }
+        
         return (
-            <button onClick={clickHandler} className="WhiteButton-style u-pointer">{this.props.text}</button>
+            <button id="p5Wrapper-download-button" className="WhiteButton-style u-pointer">{this.props.text}</button>
         );
     }
 }
