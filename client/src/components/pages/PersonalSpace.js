@@ -28,3 +28,4 @@ class Contribute extends Component {
     }
 
 }
+export default Contribute;

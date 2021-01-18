@@ -5,6 +5,7 @@ import Home from "./pages/Home.js";
 import Registration from "./pages/Registration.js";
 import Contribute from "./pages/Contribute.js";
 import PersonalSpace from "./pages/PersonalSpace.js";
+import Flower from "./pages/Flower.js";
 
 import "../utilities.css";
 
@@ -60,6 +61,7 @@ class App extends Component {
           />
           <Contribute path="/contribute" />
           <PersonalSpace path="/personalspace" />
+          <Flower path="/yourcontribution" />
           
           <NotFound default />
         </Router>

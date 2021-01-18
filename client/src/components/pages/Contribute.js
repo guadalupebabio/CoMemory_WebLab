@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 import WhiteButton from "../modules/WhiteButton.js";
+import HomeButton from "../modules/HomeButton.js";
 import InputLine from "../modules/InputLine";
 
 import "../../utilities.css";
 import "./Contribute.css";
 
+
 class Contribute extends Component {
     constructor(props) {
         super(props);
     }
+    
 
     componentDidMount() {
         // remember -- api calls go here!
     }
+
 
     render() {
         return (
@@ -40,19 +44,13 @@ class Contribute extends Component {
                     </form>                
                 <div>
                 {/*TODO: Fix the link desinations*/}
-                <WhiteButton text="Submit" linkDestination="/" />
+                <WhiteButton text="Submit" linkDestination="/yourcontribution" />
                 </div>
-            </div>  
-        )
+            </div> 
+             
+        );
     }
 }
 
+
 export default Contribute;
-
-{/*
-
-            
-                
-                <input type="checkbox" id="privacy" value="private">
-                <label for="privacy"> Check the box if you want your entry to be private</label><br> */}
-                
