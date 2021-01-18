@@ -34,5 +34,9 @@ function Sketch(p) {
     t += 1;
   
     };
+  
+  p.mouseClicked = function(){
+    p.save('myCanvas.png');
+  }
 };
 export default Sketch
