@@ -105,8 +105,7 @@ class Contribute extends Component {
                 {/* <WhiteButton text="Submit" linkDestination="/personalspace" onClick={this.handleSubmit} />  */}
                 <WhiteButton text="Submit" linkDestination="/personalspace"/>
                 </div>
-            </div> 
-             
+            </div>     
         );
     }
 }

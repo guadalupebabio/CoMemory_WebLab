@@ -4,7 +4,7 @@ const BoardSchema = new mongoose.Schema({
   honoree_name: String,
   date: Date,
   place: String,
-  message: String
+  msg: String
 });
 
 // compile model from schema
