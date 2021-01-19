@@ -11,8 +11,9 @@ import "./Flower.css";
 
 
 class Flower extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+        //this.state = { shape: 16};
     }
     
 
@@ -22,12 +23,21 @@ class Flower extends Component {
 
 
     render() {
-        //const attrs = {shape:0.3}
+        
+        const state ={rotation: 160};//
         return (
             
             <div>
                 {/*TODO: Fix the link desinations*/}
-                <P5Wrapper sketch={sketch} /> 
+                <P5Wrapper sketch={sketch} shape={state.shape} />
+                <input
+				type="range"
+				defaultValue={state.shape}
+				min="0"
+				max="360"
+				step="1"
+				onChange={event => setState({ ...state, shape: event.target.value })}
+			/>
                 <DownloadButton text="Download the flowers" linkDestination="/yourcontribution" />
                 <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/" />
                 </div>
