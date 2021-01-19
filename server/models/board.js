@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const BoardSchema = new mongoose.Schema({
   honoree_name: String,
-  date: Date,
+  date: String,
   place: String,
   msg: String
 });

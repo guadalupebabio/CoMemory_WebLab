@@ -8,25 +8,27 @@ import "./Contribute.css";
 
 import { get, post } from "../../utilities";
 
+/**
+ * 
+ * Proptypes
+ * @param {string} linkDestination
+ * 
+ */
+
+// const Board = require("../../../../server/models/board");
+
 class Contribute extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: String,
             honoree_name: String,
-            date: Date,
+            date: String,
             place: String,
         }
     }
-    
 
     componentDidMount() {
-        // //Make api post
-        // adddate = (value) => {
-        // const body = { parent: this.props.storyId, content: value };
-        // post("/api/date", body);
-        //};
-
         get("/api/whoami").then((user) => {
             if (user.name) {
                 // they are registed in the database, and currently logged in.
@@ -35,46 +37,36 @@ class Contribute extends Component {
         });
     }
 
-    // // called whenever the user types in the new post input box
-    // handleChange = (event) => {
-    //     this.setState({
-    //     value: event.target.value,
-    //     });
-    // };
-    // values = [];
-
-    // // called when the user hits "Submit" for a new post
-    //  handleSubmit = (event) => {
-    //      event.preventDefault();
-    //      this.props.onSubmit && this.props.onSubmit(this.state.values);
-    //      this.setState({
-    //      value: "",
-    //      });
-    //  };
-
-     //add here the input from the form
-    //  update= (newValue) => {
-    //      this.updateValue(<current index>, newValue)
-    // }
-
     /*
-    1. store state of this.state.name and this.state.date and this.state.place etc. bc you have a submit button here and it needs those things to submit
-    2. each input line needs to update the state each time the text changes
-    usually give input a value
-    then handleChange function (takes in event) update state to be event.target.value (what the user types in the input box)
+    pseudocode:
+        Contribute's state stores all the info
+        onSubmit:
+            post that info in state to the database <-- done... sort of?
+            redirect to personal space <-- done
+        
+        in PersonalSpace
+            get the data from the database <-- this is done
+            populate <-- also done
+*/
 
-    write four functions and each of them changes the name/date/etc.
-    */
+    // called when the user hits "Submit" for a new space
+     handleSubmit = () => {
+         const body = { honoree_name: this.state.honoree_name, date: this.state.date, place: this.state.place, msg: this.state.msg };
+         post("/api/board", body).then((board) => {
+           console.log("posted for " + body.honoree_name);
+         });
+
+         this.setState({
+            honoree_name: "",
+            date: "",
+            place: "",
+         });
+     };
 
     changeName = (newName) => { this.setState({honoree_name: newName}) }
     changeDate = (newDate) => { this.setState({date: newDate}) }
     changePlace = (newPlace) => { this.setState({place: newPlace}) }
     changeMsg = (newMsg) => { this.setState({msg: newMsg}) }
-    
-    addName = (name0) => {
-        post("/api/board", {content: name0});
-    }
-   
 
     render() {
         return (
@@ -102,8 +94,7 @@ class Contribute extends Component {
                     </form>                
                 <div>
                    
-                {/* <WhiteButton text="Submit" linkDestination="/personalspace" onClick={this.handleSubmit} />  */}
-                <WhiteButton text="Submit" linkDestination="/personalspace"/>
+                <WhiteButton text="Submit" onClick={this.handleSubmit} linkDestination="/personalspace" /> 
                 </div>
             </div>     
         );

@@ -6,8 +6,6 @@ import "./PersonalSpace.css";
 
 import { get, post } from "../../utilities";
 
-// const Board = require("../..../../server/models/board");
-
 class PersonalSpace extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +26,8 @@ class PersonalSpace extends Component {
             }
           });
         
-          get("/api/board").then((board) => {
+          get("/api/boards").then((board) => {
+              console.log("got for " + board.honoree_name);
               this.setState({
                   honoree_name: board.honoree_name,
                   date: board.date,
@@ -43,6 +42,9 @@ class PersonalSpace extends Component {
             <div id="PersonalSpace-container" className="personal">
                 <h1>{this.state.honoree_name}</h1>
                 <div>
+                    <p>date {this.state.date}</p>
+                    <p>place {this.state.place}</p>
+                    <p>msg {this.state.msg}</p>
                 <WhiteButton text="New Space" linkDestination="/contribute" />
                 </div>
             </div>
