@@ -22,7 +22,7 @@ class WhiteButton extends Component {
     render() {
         return (
         <Link to={this.props.linkDestination}> 
-            <button onClick = {this.props.onClick} className="WhiteButton-style u-pointer">{this.props.text}  </button>
+            <button onClick = {this.props.onClick} className="WhiteButton-style u-pointer">{this.props.text}</button>
         </Link>
         );
     }
