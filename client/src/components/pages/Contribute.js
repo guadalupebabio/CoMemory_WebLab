@@ -5,9 +5,6 @@ import InputLine from "../modules/InputLine";
 
 import "../../utilities.css";
 import "./Contribute.css";
-import { post } from "../../utilities";
-//import { get } from "core-js/fn/dict";
-
 
 import { get, post } from "../../utilities";
 
@@ -44,16 +41,16 @@ class Contribute extends Component {
     //     value: event.target.value,
     //     });
     // };
-    values = [];
+    // values = [];
 
-    // called when the user hits "Submit" for a new post
-     handleSubmit = (event) => {
-         event.preventDefault();
-         this.props.onSubmit && this.props.onSubmit(this.state.values);
-         this.setState({
-         value: "",
-         });
-     };
+    // // called when the user hits "Submit" for a new post
+    //  handleSubmit = (event) => {
+    //      event.preventDefault();
+    //      this.props.onSubmit && this.props.onSubmit(this.state.values);
+    //      this.setState({
+    //      value: "",
+    //      });
+    //  };
 
      //add here the input from the form
     //  update= (newValue) => {
@@ -105,8 +102,8 @@ class Contribute extends Component {
                     </form>                
                 <div>
                    
-                {/*TODO: Fix the link desinations*/}
-                <WhiteButton text="Submit" linkDestination="/personalspace" onClick={this.handleSubmit} /> 
+                {/* <WhiteButton text="Submit" linkDestination="/personalspace" onClick={this.handleSubmit} />  */}
+                <WhiteButton text="Submit" linkDestination="/personalspace"/>
                 </div>
             </div> 
              

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import WhiteButton from "../modules/WhiteButton.js";
-import HomeButton from "../modules/HomeButton.js";
 import DownloadButton from "../modules/DownloadButton.js";
-import P5Wrapper from "react-p5-wrapper"
+import P5Wrapper from "react-p5-wrapper";
 import ReactDOM from 'react-dom';
 import sketch from '../modules/sketch';
 
@@ -28,7 +27,6 @@ class Flower extends Component {
         return (
             
             <div>
-                {/*TODO: Fix the link desinations*/}
                 <P5Wrapper sketch={sketch} shape={state.shape} />
                 <input
 				type="range"
@@ -38,7 +36,7 @@ class Flower extends Component {
 				step="1"
 				onChange={event => setState({ ...state, shape: event.target.value })}
 			/>
-                <DownloadButton text="Download the flowers" linkDestination="/yourcontribution" />
+                <DownloadButton text="Download the flowers" linkDestination="/personalspace" />
                 <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/" />
                 </div>
         )
