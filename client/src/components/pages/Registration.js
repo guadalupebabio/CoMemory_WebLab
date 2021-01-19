@@ -8,7 +8,7 @@ import "./Registration.css";
 
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "136526920473-t1lo12n7ojqbh3um8t84j3jdbc07i64n.apps.googleusercontent.com";
 
 class Registration extends Component {
   constructor(props) {
@@ -44,14 +44,14 @@ class Registration extends Component {
               <li>
                 {this.props.userId ? (
                   <GoogleLogout
-                    clientId={GOOGLE_CLIENT_ID}
+                    clientId={CLIENT_ID}
                     buttonText="Logout"
                     onLogoutSuccess={this.props.handleLogout}
                     onFailure={(err) => console.log(err)}
                   />
                 ) : (
                   <GoogleLogin
-                    clientId={GOOGLE_CLIENT_ID}
+                    clientId={CLIENT_ID}
                     buttonText="Login"
                     onSuccess={this.props.handleLogin}
                     onFailure={(err) => console.log(err)}
