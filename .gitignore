@@ -1,2 +1,4 @@
 client/dist/bundle.js
 node_modules/
+.env
+CoMemory-2677707977c1.json

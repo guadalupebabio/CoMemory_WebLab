@@ -13,6 +13,8 @@
 | - Actually starts the webserver
 */
 
+// const mongoConnectionURL = 
+
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
 const validator = require("./validator");
@@ -31,11 +33,17 @@ const auth = require("./auth");
 // socket stuff
 const socketManager = require("./server-socket");
 
+require('dotenv').config("../env");
+
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "FILL ME IN";
+const mongoConnectionURL = process.env.SRV;
 // TODO change database name to the name you chose
+<<<<<<< HEAD
 const databaseName = "Co-Memory";
+=======
+const databaseName = "Cluster0";
+>>>>>>> configure mongodb and create board schema
 
 // connect to mongodb
 mongoose
@@ -53,6 +61,11 @@ app.use(validator.checkRoutes);
 
 // allow us to process POST requests
 app.use(express.json());
+
+const sessionSecret = process.env.SESSION_SECRET;
+if (sessionSecret === undefined) {
+  throw new Error("Please add a session secret as 'SESSION_SECRET'");
+}
 
 // set up a session, which will persist login data across requests
 app.use(
