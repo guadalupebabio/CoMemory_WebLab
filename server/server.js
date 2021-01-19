@@ -37,7 +37,7 @@ require('dotenv').config("../env");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = process.env.SRV;
+const mongoConnectionURL = process.env.ATLAS_SRV;
 // TODO change database name to the name you chose
 const databaseName = "Cluster0";
 
@@ -104,7 +104,7 @@ app.use((err, req, res, next) => {
 });
 
 // hardcode port to 3000 for now
-const port = 3000;
+const port = process.env.PORT ||3000;
 const server = http.Server(app);
 socketManager.init(server);
 
