@@ -16,53 +16,37 @@ const Board = require('./models/board');
 // import authentication library
 const auth = require('./auth');
 
-// //Workshop day5
-// const MY_NAME = "Guadalupe";
-// let data = {
-//   dates :[
-//     {
-//       _id: 0,
-//       creator_name: "Selena",
-//       content: "11294",
+// api endpoints: all these paths will be prefixed with "/api/"
+const router = express.Router();
 
-//     },
-//   ],
-// };
+router.get("/dates", (req, res) => {
+  res.send(data.dates);
+});
 
-// // api endpoints: all these paths will be prefixed with "/api/"
-// const router = express.Router();
-// router.get("/test", (req, res) => {
-//   res.send({message:"wow i made it!"});
-// });
+router.post("/date", (req, res) => {
+  const mydate = {
+    _id: data.dates.length,
+    creator_name: MY_NAME,
+    content: req.body.content,
+  };
+  data.dates.push(mydate);
+  res.send(mydate);
+});
 
-// router.get("/dates", (req, res) => {
-//   res.send(data.dates);
-// });
+router.get("/boards", (req, res) => {
+  Board.find({}).then((boards) => res.send(boards));
+});
 
-// router.post("/date", (req, res) => {
-//   const mydate = {
-//     _id: data.dates.length,
-//     creator_name: MY_NAME,
-//     content: req.body.content,
-//   };
-//   data.dates.push(mydate);
-//   res.send(mydate);
-// });
+router.post("/board", (req, res) => {
+  const newBoard = new Board({
+    honoree_name: req.body.honoree_name,
+    date: req.body.date,
+    place: req.body.place,
+    msg: req.body.msg,
+  });
 
-// router.get("/boards", (req, res) => {
-//   Board.find({}).then((boards) => res.send(boards));
-// });
-
-// router.post("/board", (req, res) => {
-//   const newBoard = new Board({
-//     honoree_name: req.body.honoree_name,
-//     date: req.body.date,
-//     place: req.body.place,
-//     msg: req.body.msg,
-//   });
-
-//   newBoard.save().then((board) => res.send(board));
-// });
+  newBoard.save().then((board) => res.send(board));
+});
 
 //initialize socket
 const socketManager = require('./server-socket');

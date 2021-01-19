@@ -58,12 +58,12 @@ app.use(validator.checkRoutes);
 // allow us to process POST requests
 app.use(express.json());
 
+// set up a session, which will persist login data across requests
 const sessionSecret = process.env.SESSION_SECRET;
 if (sessionSecret === undefined) {
   throw new Error("Please add a session secret as 'SESSION_SECRET'");
 }
 
-// set up a session, which will persist login data across requests
 app.use(
   session({
     secret: "session-secret",
