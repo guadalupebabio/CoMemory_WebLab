@@ -15,7 +15,10 @@ class Contribute extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: String
+            username: String,
+            honoree_name: String,
+            date: Date,
+            place: String,
         }
     }
     
@@ -66,10 +69,15 @@ class Contribute extends Component {
     write four functions and each of them changes the name/date/etc.
     */
 
-   changeName = (newName) => { this.setState({name: newName}) }
-   changeDate = (newDate) => { this.setState({date: newDate}) }
-   changePlace = (newPlace) => { this.setState({place: newPlace}) }
-   changeMsg = (newMsg) => { this.setState({msg: newMsg}) }
+    changeName = (newName) => { this.setState({honoree_name: newName}) }
+    changeDate = (newDate) => { this.setState({date: newDate}) }
+    changePlace = (newPlace) => { this.setState({place: newPlace}) }
+    changeMsg = (newMsg) => { this.setState({msg: newMsg}) }
+    
+    addName = (name0) => {
+        post("/api/board", {content: name0});
+    }
+   
 
     render() {
         return (

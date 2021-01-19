@@ -29,3 +29,11 @@ class WhiteButton extends Component {
 }
 
 export default WhiteButton;
+
+/*
+1. links to --> Space page (create page)
+2. send info to the database (memory/board)
+3. Space get that info
+
+weblab.to/react-guide
+*/

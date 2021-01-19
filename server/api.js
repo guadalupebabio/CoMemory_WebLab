@@ -49,6 +49,11 @@ router.post("/date", (req, res) => {
   res.send(mydate);
 });
 
+
+router.get("/board", (req, res) => {
+	//stuff
+});
+
 //initialize socket
 const socketManager = require('./server-socket');
 
@@ -73,14 +78,9 @@ router.post('/initsocket', (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-// router.get("/board", (req, res) => {
-//   Board.find({}).then(());
-// });
+// router.post("/newboard", (req, res) => {
 
-const app = express();
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
+// });
 
 // anything else falls to this "not found" case
 router.all('*', (req, res) => {
