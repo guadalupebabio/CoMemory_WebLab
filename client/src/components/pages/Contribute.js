@@ -9,9 +9,14 @@ import { post } from "../../utilities";
 //import { get } from "core-js/fn/dict";
 
 
+import { get, post } from "../../utilities";
+
 class Contribute extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            username: String
+        }
     }
     
 
@@ -21,6 +26,13 @@ class Contribute extends Component {
         // const body = { parent: this.props.storyId, content: value };
         // post("/api/date", body);
         //};
+
+        get("/api/whoami").then((user) => {
+            if (user.name) {
+                // they are registed in the database, and currently logged in.
+                this.setState({ username: user.name });
+            }
+        });
     }
 
     // // called whenever the user types in the new post input box
@@ -31,7 +43,7 @@ class Contribute extends Component {
     // };
     values = [];
 
-         // called when the user hits "Submit" for a new post
+    // called when the user hits "Submit" for a new post
      handleSubmit = (event) => {
          event.preventDefault();
          this.props.onSubmit && this.props.onSubmit(this.state.values);
@@ -62,7 +74,7 @@ class Contribute extends Component {
     render() {
         return (
             <div id="Form-container" className="form">
-                <h1>Hi, User</h1>
+                <h1>Hi, {this.state.username}</h1>
                     <form action="..." method="post"> 
                         <ul>
                             <label for="name">Name</label>
@@ -86,7 +98,7 @@ class Contribute extends Component {
                 <div>
                    
                 {/*TODO: Fix the link desinations*/}
-                <WhiteButton text="Submit" linkDestination="/yourcontribution" onClick={this.handleSubmit} /> 
+                <WhiteButton text="Submit" linkDestination="/personalspace" onClick={this.handleSubmit} /> 
                 </div>
             </div> 
              
