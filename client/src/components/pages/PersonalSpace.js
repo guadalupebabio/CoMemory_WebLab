@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import WhiteButton from "../modules/WhiteButton.js";
+import DownloadButton from "../modules/DownloadButton.js";
+import P5Wrapper from "react-p5-wrapper";
+import ReactDOM from 'react-dom';
+import sketch from '../modules/sketch';
 
 import "../../utilities.css";
 import "./PersonalSpace.css";
@@ -38,6 +42,7 @@ class PersonalSpace extends Component {
     }
 
     render() {
+        const state ={rotation: 160};//
         return (
             <div id="PersonalSpace-container" className="personal">
                 <h1>{this.state.honoree_name}</h1>
@@ -45,6 +50,11 @@ class PersonalSpace extends Component {
                     <p>date {this.state.date}</p>
                     <p>place {this.state.place}</p>
                     <p>msg {this.state.msg}</p>
+
+                <P5Wrapper sketch={sketch} shape={state.shape} />
+                
+                <DownloadButton text="Download the flowers" linkDestination="/personalspace" />
+                <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/" />
                 <WhiteButton text="New Space" linkDestination="/contribute" />
                 </div>
             </div>
