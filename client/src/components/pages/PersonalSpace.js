@@ -27,6 +27,7 @@ class PersonalSpace extends Component {
           });
         
           get("/api/boards").then((board) => {
+              console.log("got for " + board.honoree_name);
               this.setState({
                   honoree_name: board.honoree_name,
                   date: board.date,

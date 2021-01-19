@@ -19,19 +19,19 @@ const auth = require('./auth');
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
-router.get("/dates", (req, res) => {
-  res.send(data.dates);
-});
+// router.get("/dates", (req, res) => {
+//   res.send(data.dates);
+// });
 
-router.post("/date", (req, res) => {
-  const mydate = {
-    _id: data.dates.length,
-    creator_name: MY_NAME,
-    content: req.body.content,
-  };
-  data.dates.push(mydate);
-  res.send(mydate);
-});
+// router.post("/date", (req, res) => {
+//   const mydate = {
+//     _id: data.dates.length,
+//     creator_name: MY_NAME,
+//     content: req.body.content,
+//   };
+//   data.dates.push(mydate);
+//   res.send(mydate);
+// });
 
 router.get("/boards", (req, res) => {
   Board.find({}).then((boards) => res.send(boards));

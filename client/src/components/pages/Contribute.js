@@ -50,22 +50,18 @@ class Contribute extends Component {
 */
 
     // called when the user hits "Submit" for a new space
-    //  handleSubmit = () => {
-    //      const body = { honoree_name: this.state.honoree_name, date: this.state.date, place: this.state.place, msg: this.state.msg };
-    //      post("/api/board", body).then((board) => {
-    //        console.log("posted");
-    //      });
+     handleSubmit = () => {
+         const body = { honoree_name: this.state.honoree_name, date: this.state.date, place: this.state.place, msg: this.state.msg };
+         post("/api/board", body).then((board) => {
+           console.log("posted for " + body.honoree_name);
+         });
 
-    //     //  post("/api/comment", body).then((comment) => {
-    //     //     // display this comment on the screen
-    //     //     this.props.addNewComment(comment);
-    //     //   });
-    //      this.setState({
-    //         honoree_name: "",
-    //         date: "",
-    //         place: "",
-    //      });
-    //  };
+         this.setState({
+            honoree_name: "",
+            date: "",
+            place: "",
+         });
+     };
 
     changeName = (newName) => { this.setState({honoree_name: newName}) }
     changeDate = (newDate) => { this.setState({date: newDate}) }
@@ -98,8 +94,7 @@ class Contribute extends Component {
                     </form>                
                 <div>
                    
-                {/* <WhiteButton text="Submit" onClick={this.handleSubmit} linkDestination="/personalspace" />  */}
-                <WhiteButton text="Submit" linkDestination="/personalspace" /> 
+                <WhiteButton text="Submit" onClick={this.handleSubmit} linkDestination="/personalspace" /> 
                 </div>
             </div>     
         );
