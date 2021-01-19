@@ -6,7 +6,7 @@ import "./PersonalSpace.css";
 
 import { get, post } from "../../utilities";
 
-const Board = require("./models/board");
+// const Board = require("../..../../server/models/board");
 
 class PersonalSpace extends Component {
     constructor(props) {
