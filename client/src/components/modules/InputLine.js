@@ -18,7 +18,14 @@ class InputLine extends Component {
         super(props);
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+        // remember -- api calls go here!
+      }
+    // componentDidMount() {
+    //     get("/api/dates").then((dateObjs) =>{
+    //         this.setState({dates: dateObjs})
+    //     });
+    // }
 
     render() {
         return (

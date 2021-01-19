@@ -15,8 +15,38 @@ const User = require("./models/user");
 // import authentication library
 const auth = require("./auth");
 
+//Workshop day5
+const MY_NAME = "Guadalupe";
+let data = {
+  dates :[
+    {
+      _id: 0,
+      creator_name: "Selena",
+      content: "11294",
+
+    },
+  ],
+};
+
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
+router.get("/test", (req, res) => {
+  res.send({message:"wow i made it!"});
+});
+
+router.get("/dates", (req, res) => {
+  res.send(data.dates);
+});
+
+router.post("/date", (req, res) => {
+  const mydate = {
+    _id: data.dates.length,
+    creator_name: MY_NAME,
+    content: req.body.content,
+  };
+  data.dates.push(mydate);
+  res.send(mydate);
+});
 
 //initialize socket
 const socketManager = require("./server-socket");

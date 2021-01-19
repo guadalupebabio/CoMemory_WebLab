@@ -5,6 +5,8 @@ import InputLine from "../modules/InputLine";
 
 import "../../utilities.css";
 import "./Contribute.css";
+import { post } from "../../utilities";
+//import { get } from "core-js/fn/dict";
 
 
 class Contribute extends Component {
@@ -14,9 +16,38 @@ class Contribute extends Component {
     
 
     componentDidMount() {
-        // remember -- api calls go here!
+        // //Make api post
+        // adddate = (value) => {
+        // const body = { parent: this.props.storyId, content: value };
+        // post("/api/date", body);
+        //};
     }
 
+    // // called whenever the user types in the new post input box
+    // handleChange = (event) => {
+    //     this.setState({
+    //     value: event.target.value,
+    //     });
+    // };
+    values = [];
+
+         // called when the user hits "Submit" for a new post
+     handleSubmit = (event) => {
+         event.preventDefault();
+         this.props.onSubmit && this.props.onSubmit(this.state.values);
+         this.setState({
+         value: "",
+         });
+     };
+
+     //add here the input from the form
+    //  update= (newValue) => {
+    //      this.updateValue(<current index>, newValue)
+    // }
+
+    
+
+    
 
     render() {
         return (
@@ -43,8 +74,9 @@ class Contribute extends Component {
                         </ul>
                     </form>                
                 <div>
+                   
                 {/*TODO: Fix the link desinations*/}
-                <WhiteButton text="Submit" linkDestination="/yourcontribution" />
+                <WhiteButton text="Submit" linkDestination="/yourcontribution" onClick={this.handleSubmit} /> 
                 </div>
             </div> 
              
