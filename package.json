@@ -2,7 +2,6 @@
   "name": "Comemory weblab",
   "version": "1.0.0",
   "description": "",
-  //"main": "server/server.js",
   "main": "app.js",
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5000",
