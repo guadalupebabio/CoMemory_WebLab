@@ -1,18 +1,41 @@
 #Registration-container {
-    background: black;
+    position: fixed;
+    top:0;
+    left:0;
     height: 100vh;
     width: 100vw;
 }
 
-#Registration-container h1 {
-    font-size: var(--l);
-    font-weight: normal;
+/* Style Input */
+.registration {
+    margin-top: 20%;
+    width: 100%;
+    color: white;
+    overflow: auto;
+    float: left;
+    text-align: center;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
-#Registration-container form {
-    min-width: 170px;
+input[type=string] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    border-bottom: 2px solid white;
 }
 
-#Registration-container li + li {
-    margin-top: 1em;
+input[type=password] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: black;
+    border-bottom: 2px solid white;
 }
+

@@ -1,11 +1,11 @@
 {
-  "name": "Comemory weblab",
+  "name": "weblab-skeleton",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server/server.js",
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5000",
-    "start": "node app.js",
+    "start": "nodemon --ignore client/",
     "build": "webpack"
   },
   "repository": {

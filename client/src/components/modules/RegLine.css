@@ -1,0 +1,12 @@
+.RegLine-style {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--white);
+
+    color: var(--white);
+    font-family: inherit;
+}
+
+.RegLine-style::placeholder {
+    color: rgba(255, 255, 255, 0.536);
+}

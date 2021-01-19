@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import InputLine from "../modules/InputLine";
+import RegLine from "../modules/RegLine";
+import WhiteButton from "../modules/WhiteButton.js";
 
-import "../../utilities.css";
+//import "../../utilities.css";
 import "./Registration.css";
+
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "121479668229-t5j82jrbi9oejh7c8avada226s75bopn.apps.googleusercontent.com";
@@ -12,7 +14,7 @@ class Registration extends Component {
   constructor(props) {
     super(props);
     // Initialize Default State
-    this.state = {};
+    //this.state = {};
   }
 
   componentDidMount() {
@@ -22,22 +24,22 @@ class Registration extends Component {
   render() {
     return (
       <>
-      <div id="Registration-container" className="u-flexColumn u-flex-justifyCenter u-flex-alignCenter">
-        <h1>register</h1>
+      <div id="Registration-container" className="registration">
+        <h1>Register</h1>
         {/* TODO: fix action attribute */}
           <form action="..." method="post"> 
             <ul>
               <li>
-                <InputLine typeValue="text" idValue="email" placeholderValue="somebody@example.com" />
+                <RegLine typeValue="string" idValue="email" placeholderValue="somebody@example.com" />
               </li>
               <li>
-                <InputLine typeValue="text" idValue="username" placeholderValue="username" />
+                <RegLine typeValue="string" idValue="username" placeholderValue="username" />
               </li>
               <li>
-                <InputLine typeValue="password" idValue="password" placeholderValue="password" />
+                <RegLine typeValue="password" idValue="password" placeholderValue="password" />
               </li>
               <li>
-                {/* insert button component here */}
+              <WhiteButton text="Log in" linkDestination="/contribute" />  
               </li>
               <li>
                 {this.props.userId ? (
