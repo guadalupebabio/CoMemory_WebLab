@@ -10,6 +10,7 @@ import "./InputLine.css";
  * @param {string} typeValue
  * @param {string} idValue
  * @param {string} placeholderValue
+ * @param {function} changeFunction
  * 
  */
 
@@ -29,7 +30,7 @@ class InputLine extends Component {
 
     render() {
         return (
-            <input className="InputLine-style" type={this.props.typeValue} id={this.props.idValue} placeholder={this.props.placeholderValue} />
+            <input className="InputLine-style" onChange={(event)=>{this.props.changeFunction(event.target.value)}} type={this.props.typeValue} id={this.props.idValue} placeholder={this.props.placeholderValue} />
         );
     }
 }

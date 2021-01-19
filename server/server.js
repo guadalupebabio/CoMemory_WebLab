@@ -39,11 +39,7 @@ require('dotenv').config("../env");
 // TODO change connection URL after setting up your team database
 const mongoConnectionURL = process.env.SRV;
 // TODO change database name to the name you chose
-<<<<<<< HEAD
-const databaseName = "Co-Memory";
-=======
 const databaseName = "Cluster0";
->>>>>>> configure mongodb and create board schema
 
 // connect to mongodb
 mongoose
