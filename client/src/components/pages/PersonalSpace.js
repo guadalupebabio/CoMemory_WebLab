@@ -32,8 +32,7 @@ class PersonalSpace extends Component {
             <div id="PersonalSpace-container" className="personal">
                 <h1>Hi, {this.state.username}</h1>
                 <div>
-                {/*TODO: Fix the link desinations*/}
-                <WhiteButton text="New Space" linkDestination="/" />
+                <WhiteButton text="New Space" linkDestination="/contribute" />
                 </div>
             </div>
         )
