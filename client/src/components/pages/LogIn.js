@@ -4,13 +4,13 @@ import RegLine from "../modules/RegLine";
 import WhiteButton from "../modules/WhiteButton.js";
 
 //import "../../utilities.css";
-import "./Registration.css";
+import "./LogIn.css";
 
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "136526920473-t1lo12n7ojqbh3um8t84j3jdbc07i64n.apps.googleusercontent.com";
 
-class Registration extends Component {
+class LogIn extends Component {
   constructor(props) {
     super(props);
     // Initialize Default State
@@ -25,13 +25,10 @@ class Registration extends Component {
     return (
       <>
       <div id="Registration-container" className="registration">
-        <h1>Register</h1>
+        <h1>Log In</h1>
         {/* TODO: fix action attribute */}
           <form action="..." method="post"> 
             <ul>
-              <li>
-                <RegLine typeValue="string" idValue="email" placeholderValue="somebody@example.com" />
-              </li>
               <li>
                 <RegLine typeValue="string" idValue="username" placeholderValue="username" />
               </li>
@@ -39,35 +36,18 @@ class Registration extends Component {
                 <RegLine typeValue="password" idValue="password" placeholderValue="password" />
               </li>
               <li>
-              <WhiteButton text="Sign up" linkDestination="/contributestep1" />  
+              <WhiteButton text="Log in" linkDestination="/contributestep1" />  
               </li>
-              <li>
-                {this.props.userId ? (
-                  <GoogleLogout
-                    clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Logout"
-                    onLogoutSuccess={this.props.handleLogout}
-                    onFailure={(err) => console.log(err)}
-                  />
-                ) : (
-                  <GoogleLogin
-                    clientId={GOOGLE_CLIENT_ID}
-                    buttonText="Log in with Google"
-                    onSuccess={this.props.handleLogin}
-                    onFailure={(err) => console.log(err)}
-                  />
-                )}
-                <p id="smalltxt">already have an account? <b><a href="/login">Log in</a></b></p>
-              </li>
+              <p id="smalltxt">Don't have an account? <b><a href="/register">Sign up</a></b></p>
+
             </ul>
           </form>
           
       </div>
-      
-       
+    
       </>
     );
   }
 }
 
-export default Registration;
+export default LogIn;

@@ -4,7 +4,7 @@ import HomeButton from "../modules/HomeButton.js";
 import InputLine from "../modules/InputLine";
 
 import "../../utilities.css";
-import "./Contribute.css";
+import "./Contribute_1.css";
 
 import { get, post } from "../../utilities";
 
@@ -17,11 +17,10 @@ import { get, post } from "../../utilities";
 
 // const Board = require("../../../../server/models/board");
 
-class Contribute extends Component {
+class Contribute_1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: String,
             honoree_name: String,
             date: String,
             place: String,
@@ -29,12 +28,7 @@ class Contribute extends Component {
     }
 
     componentDidMount() {
-        get("/api/whoami").then((user) => {
-            if (user.name) {
-                // they are registed in the database, and currently logged in.
-                this.setState({ username: user.name });
-            }
-        });
+        
     }
 
     /*
@@ -71,7 +65,6 @@ class Contribute extends Component {
     render() {
         return (
             <div id="Form-container" className="form">
-                <h1>Hi, {this.state.username}</h1>
                     <form action="..." method="post"> 
                         <ul>
                             <label for="name">Name</label>
@@ -94,11 +87,11 @@ class Contribute extends Component {
                     </form>                
                 <div>
                    
-                <WhiteButton text="Submit" onClick={this.handleSubmit} linkDestination="/personalspace" /> 
+                <HomeButton text="Next" onClick={this.handleSubmit} linkDestination="/contributestep2" /> 
                 </div>
             </div>     
         );
     }
 }
 
-export default Contribute;
+export default Contribute_1;

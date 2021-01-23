@@ -10,6 +10,9 @@ html, body {
   background-color: black;
   color: white;
 }
+#hiUser{
+  text-align: left;
+}
 
 
 /* Style the navigation bar */
@@ -66,15 +69,13 @@ input[type=text] {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
+  margin-bottom: 50px;
   box-sizing: border-box;
   border: none;
   background-color: black;
   border-bottom: 2px solid white;
+  font-size: 14px;
 }
-
-
-
-
 
 
 /* Style of the Button*/
@@ -91,3 +92,4 @@ input[type=text] {
   border: none;
   
 }
+

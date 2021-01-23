@@ -6,4 +6,16 @@
     width: 100vw;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../imgs/homeBackground.png") no-repeat center center fixed;
     background-size: cover;
+    text-align: center;
 }
+
+h1{
+    font-size: 32px;
+    margin: 20px 650px 15px; 
+}
+#subtitle {
+    font-style: normal;
+    font-size: 12px;
+    margin: 0px 450px 25px; 
+    line-height: 2;
+  }

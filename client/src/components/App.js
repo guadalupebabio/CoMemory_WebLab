@@ -3,9 +3,12 @@ import { navigate, Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Home from "./pages/Home.js";
 import Registration from "./pages/Registration.js";
-import Contribute from "./pages/Contribute.js";
+import LogIn from "./pages/LogIn.js";
+import GrievingSpace from "./pages/GrievingSpace.js";
+import Contribute_1 from "./pages/Contribute_1.js";
+import Contribute_2 from "./pages/Contribute_2.js";
 import PersonalSpace from "./pages/PersonalSpace.js";
-import Flower from "./pages/Flower.js";
+
 
 import "../utilities.css";
 
@@ -40,7 +43,7 @@ class App extends Component {
     post("/api/login", { token: userToken }).then((user) => {
       this.setState({ userId: user._id });
       post("/api/initsocket", { socketid: socket.id }).then(() => {
-        navigate("/contribute");
+        navigate("/contributestep1");
       });
     });
   };
@@ -61,9 +64,12 @@ class App extends Component {
             handleLogout={this.handleLogout}
             userId={this.state.userId}
           />
-          <Contribute path="/contribute" />
+          <LogIn path="/login" />
+          <GrievingSpace path="/grievingspace" />
+          <Contribute_1 path="/contributestep1" />
+          <Contribute_2 path="/contributestep2" />
           <PersonalSpace path="/personalspace" />
-          <Flower path="/yourcontribution" />
+          
           
           <NotFound default />
         </Router>

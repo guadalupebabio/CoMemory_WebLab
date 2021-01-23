@@ -15,48 +15,31 @@ class PersonalSpace extends Component {
         super(props);
         this.state = {
             username: String,
-            honoree_name: String,
-            date: Date,
-            place: String,
-            msg: String
         }
     }
 
     componentDidMount() {
         get("/api/whoami").then((user) => {
             if (user.name) {
-              // they are registed in the database, and currently logged in.
-              this.setState({ username: user.name });
+                // they are registed in the database, and currently logged in.
+                this.setState({ username: user.name });
             }
-          });
-        
-          get("/api/boards").then((board) => {
-              console.log("got for " + board.honoree_name);
-              this.setState({
-                  honoree_name: board.honoree_name,
-                  date: board.date,
-                  place: board.place,
-                  msg: board.msg
-              });
-          });
+        });
     }
 
     render() {
-        const state ={rotation: 160};//
         return (
-            <div id="PersonalSpace-container" className="personal">
-                <h1>{this.state.honoree_name}</h1>
-                <div>
-                    <p>date {this.state.date}</p>
-                    <p>place {this.state.place}</p>
-                    <p>msg {this.state.msg}</p>
-
-                <P5Wrapper sketch={sketch} shape={state.shape} />
-                
-                <DownloadButton text="Download the flowers" linkDestination="/personalspace" />
-                <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/" />
-                <WhiteButton text="New Space" linkDestination="/contribute" />
+            <div>
+                <h1 id="header">Hi, {this.state.username}</h1>
+                <div class="upperright">
+                <WhiteButton text="New" linkDestination="/contributestep1" /> <a href="/login">Log in</a>
                 </div>
+                <div id="footer">
+                <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
+                </div>
+                
+                
+                
             </div>
         )
     }

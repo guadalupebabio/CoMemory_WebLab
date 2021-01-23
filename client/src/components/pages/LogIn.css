@@ -38,11 +38,4 @@ input[type=password] {
     background-color: black;
     border-bottom: 2px solid white;
 }
-#smalltxt {
-    margin: 10px;
-  }
 
-  a {
-    color: white;
-    text-decoration:none
-  }
