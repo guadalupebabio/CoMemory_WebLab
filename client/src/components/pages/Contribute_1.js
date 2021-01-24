@@ -61,14 +61,15 @@ class Contribute_1 extends Component {
              place: this.state.place,
              msg: this.state.msg
         };
-
-        post("/api/board", body, () => {console.log("success")}).then((board) => {
+        console.log(body)
+        post("/api/board", body).then((board) => {
             console.log("posted for " + body.honoree_name);
 
             this.setState({
                 honoree_name: "",
                 date: "",
                 place: "",
+                msg: ""
             });
         });
      };
@@ -77,11 +78,6 @@ class Contribute_1 extends Component {
     changeDate = (newDate) => { this.setState({date: newDate}) }
     changePlace = (newPlace) => { this.setState({place: newPlace}) }
     changeMsg = (newMsg) => { this.setState({msg: newMsg}) }
-
-    aTest = (event) => {
-        event.preventDefault();
-        console.log("successfully submitted");
-    }
 
     render() {
         return (
@@ -107,11 +103,8 @@ class Contribute_1 extends Component {
                                 <InputLine typeValue="text" idValue="name" placeholderValue="Say something" changeFunction={this.changeMsg} />
                             </li>
                         </ul>
-                    </form>                
-                <div>
-                   
-                <HomeButton text="Next" onClick={this.aTest} linkDestination="/contributestep1" /> 
-                </div>
+                    </form>                  
+                <HomeButton text="Next" clickFunction={this.handleSubmit} linkDestination="/contributestep2" /> 
             </div>     
         );
     }
