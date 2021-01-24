@@ -8,40 +8,50 @@ import sketch from '../modules/sketch';
 import "../../utilities.css";
 import "./Contribute_2.css";
 
+import { get, post } from "../../utilities";
 
 class Contribute_2 extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            name: String,
+            username: String,
+            honoree_name: String,
             date: String,
             place: String,
-            message: String,
+            msg: String,
         }
     }
     
-
     componentDidMount() {
-        // remember -- api calls go here!
-        // get("/api/whoami").then((user) => {
-        //     if (user.name) {
-        //         // they are registed in the database, and currently logged in.
-        //         this.setState({ username: user.name });
-        //     }
-        // });
+        get("/api/whoami").then((user) => {
+            if (user.name) {
+                // they are registed in the database, and currently logged in.
+                this.setState({ username: user.name });
+            }
+        });
+
+        get("/api/boards").then((board) => {
+            console.log("got data")
+            this.setState({
+                honoree_name: board.honoree_name,
+                date: board.date,
+                place: board.place,
+                msg: board.msg
+            })
+        })
     }
 
 
     render() {
         
-        const state ={rotation: 160};//
+        const state ={rotation: 160};
         return (
-            
             <div class="relative">
-                <p>Name: {this.state.name}</p>
+                <p>Hi, {this.state.username}</p>
+                <p>Name: {this.state.honoree_name}</p>
                 <p>Date: {this.state.date}</p>
                 <p>Place: {this.state.place}</p>
-                <p>Message: {this.state.message}</p>
+                <p>Message: {this.state.msg}</p>
 
 
                     <div class="absoluteleft"><P5Wrapper sketch={sketch} shape={state.shape} /></div>
