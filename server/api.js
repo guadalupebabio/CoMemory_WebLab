@@ -39,6 +39,7 @@ router.get("/boards", (req, res) => {
 
 router.post("/board", (req, res) => {
   const newBoard = new Board({
+	creator_id: req.body.creator_id,
     honoree_name: req.body.honoree_name,
     date: req.body.date,
     place: req.body.place,
