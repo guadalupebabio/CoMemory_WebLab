@@ -63,14 +63,14 @@ class Contribute_1 extends Component {
         };
 
         post("/api/board", body, () => {console.log("success")}).then((board) => {
-           console.log("posted for " + body.honoree_name);
-        });
+            console.log("posted for " + body.honoree_name);
 
-        this.setState({
-            honoree_name: "",
-            date: "",
-            place: "",
-         });
+            this.setState({
+                honoree_name: "",
+                date: "",
+                place: "",
+            });
+        });
      };
 
     changeName = (newName) => { this.setState({honoree_name: newName}) }
