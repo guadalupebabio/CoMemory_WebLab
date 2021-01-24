@@ -21,14 +21,21 @@ class Contribute_1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            creator_id: String,
             honoree_name: String,
             date: String,
             place: String,
+            msg: String
         }
     }
 
     componentDidMount() {
-        
+        get("/api/whoami").then((user) => {
+            if (user.name) {
+                // they are registed in the database, and currently logged in.
+                this.setState({ creator_id: user._id });
+            }
+        });
     }
 
     /*
@@ -44,13 +51,22 @@ class Contribute_1 extends Component {
 */
 
     // called when the user hits "Submit" for a new space
-     handleSubmit = () => {
-         const body = { honoree_name: this.state.honoree_name, date: this.state.date, place: this.state.place, msg: this.state.msg };
-         post("/api/board", body).then((board) => {
-           console.log("posted for " + body.honoree_name);
-         });
+     handleSubmit = (event) => {
+         event.preventDefault();
+         console.log("successfully submitted")
+         const body = {
+             creator_id: this.state.creator_id,
+             honoree_name: this.state.honoree_name,
+             date: this.state.date,
+             place: this.state.place,
+             msg: this.state.msg
+        };
 
-         this.setState({
+        post("/api/board", body, () => {console.log("success")}).then((board) => {
+           console.log("posted for " + body.honoree_name);
+        });
+
+        this.setState({
             honoree_name: "",
             date: "",
             place: "",
@@ -62,24 +78,31 @@ class Contribute_1 extends Component {
     changePlace = (newPlace) => { this.setState({place: newPlace}) }
     changeMsg = (newMsg) => { this.setState({msg: newMsg}) }
 
+    aTest = (event) => {
+        event.preventDefault();
+        console.log("successfully submitted");
+    }
+
     render() {
         return (
             <div id="Form-container" className="form">
+                <p>hi, {this.state.creator_id}</p>
+                <p>{this.state.honoree_name}</p>
                     <form action="..." method="post"> 
                         <ul>
-                            <label for="name">Name</label>
+                            <label htmlFor="name">Name</label>
                             <li>
                                 <InputLine typeValue="text" idValue="name" placeholderValue="Name" changeFunction={this.changeName} />
                             </li>
-                            <label for="date">A Date (birth, special date, death, etc.)</label>
+                            <label htmlFor="date">A Date (birth, special date, death, etc.)</label>
                             <li>
                                 <InputLine typeValue="text" idValue="date" placeholderValue="mm/dd/yyyy" changeFunction={this.changeDate} />
                             </li>
-                            <label for="place">A Place (favorite, hometown, resting place, etc.)</label>
+                            <label htmlFor="place">A Place (favorite, hometown, resting place, etc.)</label>
                             <li>
                                 <InputLine typeValue="text" idValue="place" placeholderValue="Location" changeFunction={this.changePlace} />
                             </li>
-                            <label for="message">A Message</label>
+                            <label htmlFor="message">A Message</label>
                             <li>
                                 <InputLine typeValue="text" idValue="name" placeholderValue="Say something" changeFunction={this.changeMsg} />
                             </li>
@@ -87,7 +110,7 @@ class Contribute_1 extends Component {
                     </form>                
                 <div>
                    
-                <HomeButton text="Next" onClick={this.handleSubmit} linkDestination="/contributestep2" /> 
+                <HomeButton text="Next" onClick={this.aTest} linkDestination="/contributestep1" /> 
                 </div>
             </div>     
         );
