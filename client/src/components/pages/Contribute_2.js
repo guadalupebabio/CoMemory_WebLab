@@ -21,10 +21,7 @@ class Contribute_2 extends Component {
         super(props);
         this.state = {
             username: "",
-            honoree_name: "",
-            date: "",
-            place: "",
-            msg: "",
+            boards: [],
         }
     }
     
@@ -36,30 +33,36 @@ class Contribute_2 extends Component {
             }
         });
 
-        get("/api/boards", {userId: this.props.userId}).then((board) => {
-            console.log("got info");
-            this.setState({
-                honoree_name: board.honoree_name,
-                date: board.date,
-                place: board.place,
-                msg: board.msg
+        get("/api/boards", {userId: this.props.userId}).then((boardObjs) => {
+            console.log("got list of boards");
+            boardObjs.map((boardObj) => {
+                this.setState({ boards: this.state.boards.concat([boardObj])});
             })
         });
     }
 
 
     render() {
-        
+    let boardList = null;
+    const hasBoards = this.state.boards.length !== 0;
+    if (hasBoards) {
+      boardList = this.state.boards.map((boardObj) => (
+        <Board
+          key={`Board_${boardObj._id}`}
+          _id={boardObj._id}
+          creator_id={boardObj.creator_id}
+          honoree_name={boardObj.honoree_name}
+          date={storyObj.date}
+          place={storyObj.place}
+          msg={storyObj.msg}
+        />
+      ));
+    } else {
+      boardList = <div>Create a memory</div>;
+    }
         const state ={rotation: 160};
         return (
             <div class="relative">
-                <p>Hi, {this.state.username}</p>
-                <p>Name: {this.state.honoree_name}</p>
-                <p>Date: {this.state.date}</p>
-                <p>Place: {this.state.place}</p>
-                <p>Message: {this.state.msg}</p>
-
-
                     <div class="absoluteleft"><P5Wrapper sketch={sketch} shape={state.shape} /></div>
                     {/* <input
                     type="range"
