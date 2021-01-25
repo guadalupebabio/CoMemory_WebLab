@@ -29,12 +29,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // get("/api/whoami").then((user) => {
-    //   if (user._id) {
-    //     // they are registed in the database, and currently logged in.
-    //     this.setState({ userId: user._id });
-    //   }
-    // });
+    get("/api/whoami").then((user) => {
+      if (user._id) {
+        // they are registed in the database, and currently logged in.
+        this.setState({ userId: user._id });
+      }
+    });
   }
 
   handleLogin = (res) => {
@@ -67,9 +67,8 @@ class App extends Component {
           <LogIn path="/login" />
           <GrievingSpace path="/grievingspace" />
           <Contribute_1 path="/contributestep1" />
-          <Contribute_2 path="/contributestep2" />
+          <Contribute_2 path="/contributestep2" userId={this.state.userId} />
           <PersonalSpace path="/personalspace" />
-          
           
           <NotFound default />
         </Router>

@@ -34,7 +34,8 @@ const router = express.Router();
 // });
 
 router.get("/boards", (req, res) => {
-  Board.find({}).then((boards) => res.send(boards));
+	console.log(req.user._id);
+  	Board.find({creator_id: req.user._id}).then((boards) => res.send(boards));
 });
 
 router.post("/board", (req, res) => {
