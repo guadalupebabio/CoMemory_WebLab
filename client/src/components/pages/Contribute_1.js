@@ -7,6 +7,7 @@ import "../../utilities.css";
 import "./Contribute_1.css";
 
 import { get, post } from "../../utilities";
+import { navigate } from "@reach/router";
 
 /**
  * 
@@ -21,11 +22,11 @@ class Contribute_1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            creator_id: String,
-            honoree_name: String,
-            date: String,
-            place: String,
-            msg: String
+            creator_id: "",
+            honoree_name: "",
+            date: "",
+            place: "",
+            msg: "",
         }
     }
 
@@ -72,6 +73,7 @@ class Contribute_1 extends Component {
                 msg: ""
             });
         });
+        navigate("/contributestep2");
      };
 
     changeName = (newName) => { this.setState({honoree_name: newName}) }
