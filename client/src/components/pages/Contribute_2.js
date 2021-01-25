@@ -37,27 +37,25 @@ class Contribute_2 extends Component {
         const state ={rotation: 160};//
         return (
             
-            <div class="relative">
-                <p>Name: {this.state.name}</p>
-                <p>Date: {this.state.date}</p>
-                <p>Place: {this.state.place}</p>
-                <p>Message: {this.state.message}</p>
+            <div className="flowercontainer">
+                <div class="cont2txt"> 
+                <p>Name: jghvsdbcljbeaiorbvliesr {this.state.name}</p>
+                <p>Date: jghvsdbcljbeaiorbvliesr {this.state.date}</p>
+                <p>Place: jghvsdbcljbeaiorbvliesr {this.state.place}</p>
+                <p>Message: jghvsdbcljbea iorbvliesrjghvsdbcljbeaio rbvliesrjghvsdbcljbeai orbvliesrjghv {this.state.message}</p>
 
+                </div >
 
-                    <div class="absoluteleft"><P5Wrapper sketch={sketch} shape={state.shape} /></div>
-                    <input
-                    type="range"
-                    defaultValue={state.shape}
-                    min="0"
-                    max="360"
-                    step="1"
-                    onChange={event => setState({ ...state, shape: event.target.value })}/>
+                <div class="cont2flower"><P5Wrapper sketch={sketch} shape={state.shape} /></div>
+                {/* <input type="range" defaultValue={state.shape} min="0" max="360" step="1" onChange={event => setState({ ...state, shape: event.target.value })}/> */}
 
-                    <div class="absolutebutton">
-                    <DownloadButton text="Download" linkDestination="/" />
-                    <WhiteButton text="Submit" linkDestination="/personalspace" />
-                    </div>
+                <div class="cont2buttons">
+                <a href="/contributestep1">back</a> 
+                <DownloadButton text="Download" linkDestination="/" />
+                <WhiteButton text="Submit" linkDestination="/personalspace" />
                 </div>
+
+            </div>
         )
     }
 }

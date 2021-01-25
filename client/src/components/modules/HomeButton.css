@@ -2,7 +2,7 @@
     border: var(--white) 2px solid;
     border-radius: 25px;
     padding: var(--s) var(--l);
-    margin: var(--xs);
+    margin: 15px 10px 0px;
 
     color: var(--white);
     font-family: 'Open Sans', sans-serif;
@@ -10,8 +10,8 @@
 }
 
 .HomeButton-style:hover {
-    background: var(--black);
-    color: var(--white);
-    border-color: var(--black);
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--white);
     transition-duration: 0.2s;
 }

@@ -1,14 +1,4 @@
-
-html, head {
-    background-color: black;
-  }
-  
-  h2 {
-    color: white;
-    text-align: center;
-  }
-  
-  /* Style Body */
+/* Style Body */
   html, body {
     margin: 30;
     padding: 50px;
@@ -38,6 +28,7 @@ html, head {
   img {
     border-radius: 5%;
     border: 2px solid white;
+    
   }
   
   /* Clear floats after image containers */
@@ -45,55 +36,17 @@ html, head {
     content: "";
     clear: both;
     display: center;
+    border: 3px solid #73AD21;
+  }
+  #personalfooter{
+    bottom: 5%;
+    margin-left: 10%;
+    left: 5%;
+    position: fixed;
+    font-size: 12px;
+  
   }
   
-  /* Style the navigation bar */
-  .navbar {
-    width: 100%;
-    background-color: black;
-    overflow: auto;
-  }
+
+
   
-  /* Navbar links */
-  .navbar a {
-    float: left;
-    text-align: center;
-    padding: 40px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Navbar links on mouse-over */
-  .navbar a:hover {
-    font-weight:bold;
-  }
-  
-  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
-  
-  /* Right-aligned section inside the top navigation */
-  .navbar-right {
-    float: right;
-  }
-  
-  /* Style of the Button*/
-  .button {
-    background-color: gray;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    font-weight:bold;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 25px;
-    border: 3px solid white;
-    
-  }

@@ -1,15 +1,70 @@
-div.relative {
+/* For mobile phones: */
+div.flowercontainer {
     position: relative;
-    height: 700px;
-    /*border: 3px solid #73AD21;*/
+    margin-left: 0px;
+    margin-top: 50px;
+    /* border: 3px solid #73AD21; */
   } 
-div.absoluteleft {
-    position: absolute;
+
+div.cont2txt{
+  width: 100%;
+  /* border: 3px solid #73AD21; */
+}
+
+
+div.cont2flower {
+  top:0;
+  width: 100%;
+  align-items: center;
+  /* border: 3px solid #73AD21; */
+}
+  
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  div.flowercontainer {
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 50px;
+  }
+  div.cont2flower {
+    
+    top:0;
     right: 0;
+    /* border: 3px solid blue; */
+    width: 100%;
     
   }
-div.absolutebutton {
-    position: absolute;
-    top: 650px;
-    
+  div.cont2txt{
+    width: 80%;
+    /* border: 3px solid #73AD21; */
   }
+  
+  }
+  
+    @media only screen and (min-width: 1150px) {
+      /* For desktop: */
+      div.cont2flower {
+        position: absolute; 
+        top:0;
+        right: 0;
+        /* border: 3px solid red; */
+        width: 40%;
+        height: 100%;
+        
+      }
+      div.cont2txt{
+        width: 50%;
+        height: 70%;
+        /* border: 3px solid #73AD21; */
+      }
+      div.flowercontainer {
+        width: 85%;
+        height: 600px;
+        /* border: 3px solid #73AD21; */
+      }
+      div.cont2buttons{
+        position: absolute; 
+        bottom: 20px;
+        /* border: 3px solid #73AD21; */
+      }
+      }

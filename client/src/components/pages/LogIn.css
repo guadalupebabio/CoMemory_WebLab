@@ -3,7 +3,8 @@
     top:0;
     left:0;
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
+    width: 100%;
 }
 
 /* Style Input */
@@ -20,7 +21,7 @@
 }
 
 input[type=string] {
-    width: 15%;
+    width: 250px;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -30,7 +31,7 @@ input[type=string] {
 }
 
 input[type=password] {
-    width: 15%;
+    width: 250px;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;

@@ -28,13 +28,17 @@ class PersonalSpace extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <h1 id="header">Hi, {this.state.username}</h1>
                 <div class="upperright">
-                <WhiteButton text="New" linkDestination="/contributestep1" /> <a href="/login">Log in</a>
-                </div>
-                <div id="footer">
+                
+                  <WhiteButton text="New" linkDestination="/contributestep1" /> <a href="/login">Log out</a> 
+                  
+                </div> 
+                
+                <div id="personalfooter">
                 <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
                 </div>
                 

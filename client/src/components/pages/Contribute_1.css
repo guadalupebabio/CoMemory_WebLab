@@ -1,12 +1,9 @@
 html, head {
-  margin: 0px;
-  padding: 0px;
   background-color: black;
 }
 
 html, body {
-  margin: 30px;
-  padding: 50px;
+  padding: 30px;
   background-color: black;
   color: white;
 }
@@ -26,7 +23,7 @@ html, body {
 .navbar a {
   float: left;
   text-align: center;
-  padding: 40px;
+  padding: 30px;
   color: white;
   text-decoration: none;
   font-size: 17px;
@@ -53,14 +50,10 @@ html, body {
 
 /* Style Form */
 .form {
-  margin-left: 60px;
-  margin-top: 20px;
-  width: 100%;
   color: white;
   overflow: auto;
   float: left;
   text-align: justify;
-  padding: 0px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -78,18 +71,27 @@ input[type=text] {
 }
 
 
-/* Style of the Button*/
-.button {
-  background-color: white;
-  color: black;
-  padding: 5px 15px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 25px;
-  border: none;
+
+
+    /* For mobile phones: */
+    .form  {
+      margin-left: 0px;
+      margin-top: 50px;
+      width:600px;
+      }
   
-}
+    @media only screen and (min-width: 600px) {
+      /* For tablets: */
+      .form  { 
+        margin-left: 10%;
+        margin-top: 50px;
+        width:170%;
+      }
+      }
+  
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+      .form  { width:1000px;}
+      }
+
 
