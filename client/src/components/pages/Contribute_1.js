@@ -7,6 +7,7 @@ import "../../utilities.css";
 import "./Contribute_1.css";
 
 import { get, post } from "../../utilities";
+import { navigate } from "@reach/router";
 
 /**
  * 
@@ -21,14 +22,21 @@ class Contribute_1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            honoree_name: String,
-            date: String,
-            place: String,
+            creator_id: "",
+            honoree_name: "",
+            date: "",
+            place: "",
+            msg: "",
         }
     }
 
     componentDidMount() {
-        
+        get("/api/whoami").then((user) => {
+            if (user.name) {
+                // they are registed in the database, and currently logged in.
+                this.setState({ creator_id: user._id });
+            }
+        });
     }
 
     /*
@@ -44,17 +52,28 @@ class Contribute_1 extends Component {
 */
 
     // called when the user hits "Submit" for a new space
-     handleSubmit = () => {
-         const body = { honoree_name: this.state.honoree_name, date: this.state.date, place: this.state.place, msg: this.state.msg };
-         post("/api/board", body).then((board) => {
-           console.log("posted for " + body.honoree_name);
-         });
+     handleSubmit = (event) => {
+         event.preventDefault();
+         console.log("successfully submitted")
+         const body = {
+             creator_id: this.state.creator_id,
+             honoree_name: this.state.honoree_name,
+             date: this.state.date,
+             place: this.state.place,
+             msg: this.state.msg
+        };
+        console.log(body)
+        post("/api/board", body).then((board) => {
+            console.log("posted for " + body.honoree_name);
 
-         this.setState({
-            honoree_name: "",
-            date: "",
-            place: "",
-         });
+            this.setState({
+                honoree_name: "",
+                date: "",
+                place: "",
+                msg: ""
+            });
+        });
+        navigate("/contributestep2");
      };
 
     changeName = (newName) => { this.setState({honoree_name: newName}) }
@@ -65,30 +84,29 @@ class Contribute_1 extends Component {
     render() {
         return (
             <div id="Form-container" className="form">
+                <p>hi, {this.state.creator_id}</p>
+                <p>{this.state.honoree_name}</p>
                     <form action="..." method="post"> 
                         <ul>
-                            <label for="name">Name</label>
+                            <label htmlFor="name">Name</label>
                             <li>
                                 <InputLine typeValue="text" idValue="name" placeholderValue="Name" changeFunction={this.changeName} />
                             </li>
-                            <label for="date">A Date (birth, special date, death, etc.)</label>
+                            <label htmlFor="date">A Date (birth, special date, death, etc.)</label>
                             <li>
                                 <InputLine typeValue="text" idValue="date" placeholderValue="mm/dd/yyyy" changeFunction={this.changeDate} />
                             </li>
-                            <label for="place">A Place (favorite, hometown, resting place, etc.)</label>
+                            <label htmlFor="place">A Place (favorite, hometown, resting place, etc.)</label>
                             <li>
                                 <InputLine typeValue="text" idValue="place" placeholderValue="Location" changeFunction={this.changePlace} />
                             </li>
-                            <label for="message">A Message</label>
+                            <label htmlFor="message">A Message</label>
                             <li>
                                 <InputLine typeValue="text" idValue="name" placeholderValue="Say something" changeFunction={this.changeMsg} />
                             </li>
                         </ul>
-                    </form>                
-                <div>
-                   
-                <HomeButton text="Next" onClick={this.handleSubmit} linkDestination="/contributestep2" /> 
-                </div>
+                    </form>                  
+                <HomeButton text="Next" clickFunction={this.handleSubmit} linkDestination="/contributestep2" /> 
             </div>     
         );
     }

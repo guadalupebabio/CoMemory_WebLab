@@ -9,6 +9,7 @@ import "./HomeButton.css";
  * Proptypes
  * @param {string} text
  * @param {string} linkDestination
+ * @param {function} clickFunction
  * 
  */
 
@@ -22,7 +23,7 @@ class HomeButton extends Component {
     render() {
         return (
         <Link to={this.props.linkDestination}> 
-            <button className="HomeButton-style u-pointer">{this.props.text}</button>
+            <button className="HomeButton-style u-pointer" onClick={this.props.clickFunction}>{this.props.text}</button>
         </Link>
         );
     }
