@@ -22,6 +22,7 @@ class Contribute_1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            username: "",
             creator_id: "",
             honoree_name: "",
             date: "",
@@ -34,22 +35,13 @@ class Contribute_1 extends Component {
         get("/api/whoami").then((user) => {
             if (user.name) {
                 // they are registed in the database, and currently logged in.
-                this.setState({ creator_id: user._id });
+                this.setState({ 
+                    username: user.name,
+                    creator_id: user._id
+                });
             }
         });
     }
-
-    /*
-    pseudocode:
-        Contribute's state stores all the info
-        onSubmit:
-            post that info in state to the database <-- done... sort of?
-            redirect to personal space <-- done
-        
-        in PersonalSpace
-            get the data from the database <-- this is done
-            populate <-- also done
-*/
 
     // called when the user hits "Submit" for a new space
      handleSubmit = (event) => {
@@ -84,7 +76,7 @@ class Contribute_1 extends Component {
     render() {
         return (
             <div id="Form-container" className="form">
-                <p>hi, {this.state.creator_id}</p>
+                <p>Hi, {this.state.username}</p>
                 <p>{this.state.honoree_name}</p>
                     <form action="..." method="post"> 
                         <ul>
