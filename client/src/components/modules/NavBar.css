@@ -2,17 +2,23 @@
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
+    /* width: 100vw; */
 }
 
 #Nav-container .Nav-link {
     border-bottom: 1px solid #fff;
     transform: scale(1.0);
     transition-duration: 0.5s;
+    min-width: max-content;
 }
 
 #Nav-container .Nav-link:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
+}
+
+#Nav-container h1 {
+    color: white;
 }
 
 #Nav-container > * {
@@ -22,6 +28,7 @@
 @media only screen and (max-width: 450px) {
     #Nav-container {
         flex-flow: row wrap;
+        justify-content: center;
     }
 
 }

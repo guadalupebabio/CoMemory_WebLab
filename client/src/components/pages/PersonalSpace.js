@@ -75,7 +75,7 @@ class PersonalSpace extends Component {
 
 			return (
 				<div className="pscontainer">
-					<NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
+					<NavBar title="My Memories" userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
 					<h1 id="HiUserPS">Hi, {this.state.username}</h1>
 					<h2 id="header">My Memories</h2> 
 					<div id="pslist"> 

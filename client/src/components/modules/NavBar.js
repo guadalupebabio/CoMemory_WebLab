@@ -10,6 +10,7 @@ import './NavBar.css';
  * @param {string} userId
  * @param {function} handleLogin
  * @param {function} handleLogout
+ * @param {string} title
  * 
  */
 
@@ -23,10 +24,11 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div id="Nav-container">
-				<WhiteButton className="Nav-button" text="New Memory" linkDestination="/contributestep1" />
+				<h1>{this.props.title}</h1>
 				<a className="Nav-link" href="/personalspace">My Memories</a>
 				<a className="Nav-link" href="/grievingspace">The Grieving Space</a>
 				{/* <WhiteButton className="Nav-button" text="My Memories" linkDestination="/personalspace" /> */}
+				<WhiteButton className="Nav-button" text="New Memory" linkDestination="/contributestep1" />
 				{this.props.userId ? (
 					<GoogleLogout
 						clientId={GOOGLE_CLIENT_ID}
