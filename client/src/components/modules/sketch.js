@@ -1,4 +1,5 @@
 import { get, post } from '../../utilities';
+import P5Wrapper, {CLOSE} from 'react-p5-wrapper';
 
 function Sketch(p, board_id) {
 	let shape = 0;
@@ -26,7 +27,7 @@ function Sketch(p, board_id) {
 	p.draw = function() {
 		p.translate(250, 250);
 		var t = 0;
-		p.beginShape();
+		// p.beginShape();
 		let vol = 2;
 		//var shape = 0.003
 		for (var i = 0; i < 200; i++) {
@@ -40,12 +41,13 @@ function Sketch(p, board_id) {
 			//p.curveVertex(x, y);
 
 			p.ellipse(y, x, 3);
-    }
-		post('/api/uploadImage', { board_id, image: c.elt.toDataURL('image/png') }).then((board) => {
-			console.log('image uploaded');
-		});
-		p.endShape(CLOSE);
+		}
+		// p.endShape(CLOSE);
 		t += 1;
+		console.log('reached checkpoint -1');
+		post('/api/uploadImage', { board_id: board_id, imageName: c.elt.toDataURL('image/png') }).then((board) => {
+			console.log('reached checkpoint 0');
+		});
 	};
 
 	document.getElementById('p5Wrapper-download-button').addEventListener('click', () => {

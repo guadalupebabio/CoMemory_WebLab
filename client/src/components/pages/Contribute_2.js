@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WhiteButton from '../modules/WhiteButton.js';
 import DownloadButton from '../modules/DownloadButton.js';
-import P5Wrapper from 'react-p5-wrapper';
+import P5Wrapper, {CLOSE} from 'react-p5-wrapper';
 import sketch from '../modules/sketch';
 import Board from '../modules/Board';
 
@@ -42,12 +42,16 @@ class Contribute_2 extends Component {
 		get('/api/boards').then((boardObjs) => {
 			console.log('got list of boards');
 			boardObjs.map((boardObj) => {
-				this.setState({ boards: this.state.boards.concat([ boardObj ]) });
+				this.setState({
+					boards: this.state.boards.concat([ boardObj ]),
+					board_id: boardObj._id,
+				});
 			});
 		});
 	}
 
 	render() {
+		console.log(CLOSE);
 		if (this.props.userId) {
 			let boardList = null;
 			const hasBoards = this.state.boards.length !== 0;
@@ -89,11 +93,11 @@ class Contribute_2 extends Component {
 			);
 		} else {
 			return (
-                <div className="u-flex u-flex-justifyCenter u-flex-alignCenter">
-                    <div>Please log in to contribute!</div>
-                    <WhiteButton text="Login" linkDestination="/register" />
-                </div>
-            );
+				<div className="u-flex u-flex-justifyCenter u-flex-alignCenter">
+					<div>Please log in to contribute!</div>
+					<WhiteButton text="Login" linkDestination="/register" />
+				</div>
+			);
 		}
 	}
 }

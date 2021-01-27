@@ -50,20 +50,22 @@ router.post('/board', auth.ensureLoggedIn, (req, res) => {
 });
 
 router.post('/uploadImage', auth.ensureLoggedIn, (req, res) => {
-		return uploadImagePromise(req.body.image);	
-	});
-	// .then((imageName) => {
-	// 	return Board.updateOne({ _id: req.body.board_id }, { imageName });
-	// })
-	// .then((board) => {
-	// 	res.send({}); // success!
-	// })
-	// .catch((err) => {
-	// 	console.log('ERR: upload image: ' + err);
-	// 	res.status(500).send({
-	// 		message: 'error uploading'
-	// 	});
-	// });
+	console.log("reached checkpoint 1");
+	return uploadImagePromise(req.body.imageName)
+		.then((imageName) => {
+			console.log("reached checkpoint 2");
+			return Board.updateOne({ _id: req.body.board_id }, { imageName });
+		})
+		.then((board) => {
+			res.send({}); // success!
+		})
+		.catch((err) => {
+			console.log('ERR: upload image: ' + err);
+			res.status(500).send({
+				message: 'error uploading'
+			});
+		});
+});
 
 router.get('/getImages', auth.ensureLoggedIn, (req, res) => {
 	Board.find({ isPublic: true }).then((boards) => {
@@ -101,14 +103,6 @@ router.post('/initsocket', (req, res) => {
 	if (req.user) socketManager.addUser(req.user, socketManager.getSocketFromSocketID(req.body.socketid));
 	res.send({});
 });
-
-// |------------------------------|
-// | write your API methods below!|
-// |------------------------------|
-
-// router.post("/newboard", (req, res) => {
-
-// });
 
 // anything else falls to this "not found" case
 router.all('*', (req, res) => {
