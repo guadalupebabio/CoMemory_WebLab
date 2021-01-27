@@ -83,9 +83,9 @@ class PersonalSpace extends Component {
 					{boardList}
 					</div>
 					</div>
-					<div >
+					{/* <div >
 						<WhiteButton text="Explore the Grieving Space" linkDestination="/grievingspace" />
-					</div>
+					</div> */}
 					
 				</div>
 			);
