@@ -5,6 +5,13 @@
     position: fixed;
     font-size: 0.8rem;
 }
+
+#GrievingSpace-boardContainer {
+  display: flex;
+  flex-flow: row-reverse;
+  margin: 2%;
+}
+
 .gscontainer{
     /* display: flex;
     flex-direction: column; */

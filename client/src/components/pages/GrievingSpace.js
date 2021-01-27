@@ -72,7 +72,9 @@ class GrievingSpace extends Component {
 					handleLogout={this.props.handleLogout}
 				/>
 				<p className="upperleft">A virtual space to honor and grieve loved ones</p>
-				{boardList}
+				<div id="GrievingSpace-boardContainer">
+                    {boardList}
+                </div>
 				{this.state.flowers.length === 0 ? (
 					<p className="middle">Contribute a memory</p>
 				) : (

@@ -78,8 +78,9 @@ class PersonalSpace extends Component {
 					<h1 id="HiUserPS">Hi, {this.state.username}</h1>
 					<h2 id="header">My Memories</h2> 
 					<div id="pslist"> 
+					<div id="PersonalSpace-boardContainer">
 					{boardList}
-					
+					</div>
 					</div>
 					
                     <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />

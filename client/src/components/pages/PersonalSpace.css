@@ -25,6 +25,11 @@
 
   }
 
+  #PersonalSpace-boardContainer {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
   .pscontainer{
     display: flex;
     height: 100vh;
