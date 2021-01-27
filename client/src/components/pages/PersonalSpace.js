@@ -69,7 +69,7 @@ class PersonalSpace extends Component {
 			} else {
 				boardList = [
 					<div className="Board-styles">Create a memory.</div>,
-					<WhiteButton text="New" linkDestination="/contributestep1" />
+					
 				];
 			}
 
@@ -83,9 +83,9 @@ class PersonalSpace extends Component {
 					{boardList}
 					</div>
 					</div>
-					<div >
+					{/* <div >
 						<WhiteButton text="Explore the Grieving Space" linkDestination="/grievingspace" />
-					</div>
+					</div> */}
 					
 				</div>
 			);
