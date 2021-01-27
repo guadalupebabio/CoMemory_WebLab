@@ -5,7 +5,9 @@
     width: 40%;
     /* border: 0.5px solid red;  */
     margin: 2% 2%;
-
+    background: rgb(16, 16, 16);
+    padding: 40px;
+    border-radius: 10px;
 }
 
 #Board-name {

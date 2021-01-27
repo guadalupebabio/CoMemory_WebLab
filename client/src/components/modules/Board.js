@@ -25,7 +25,7 @@ class Board extends Component {
           <p id="Board-name">{this.props.honoree_name}</p>
           <p>Date: {this.props.date}</p>
           <p>Place: {this.props.place}</p>
-          <p>Message: {this.props.msg}</p>
+          <p>{this.props.msg}</p>
         </div>
       );
     }
