@@ -68,7 +68,7 @@ class PersonalSpace extends Component {
 				boardList.reverse();
 			} else {
 				boardList = [
-					<a href="/contributestep1"><div className="Board-styles">Create a memory.</div></a>,
+					<a href="/contributestep1"><div className="Board-styles">Create a memory, or refresh the page if you already have.</div></a>,
 					
 				];
 			}
