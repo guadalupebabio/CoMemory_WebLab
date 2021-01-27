@@ -75,6 +75,7 @@ class PersonalSpace extends Component {
 
 			return (
 				<div className="pscontainer">
+					<NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
 					<h1 id="HiUserPS">Hi, {this.state.username}</h1>
 					<h2 id="header">My Memories</h2> 
 					<div id="pslist"> 
@@ -82,10 +83,8 @@ class PersonalSpace extends Component {
 					{boardList}
 					</div>
 					</div>
-					
-                    <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
 					<div >
-						<WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
+						<WhiteButton text="Explore the Grieving Space" linkDestination="/grievingspace" />
 					</div>
 					
 				</div>
