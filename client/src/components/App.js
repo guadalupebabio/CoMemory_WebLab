@@ -72,9 +72,9 @@ class App extends Component {
             userId={this.state.userId}
           />
           <LogIn path="/login" />
-          <GrievingSpace path="/grievingspace" />
+          <GrievingSpace path="/grievingspace" userId={this.state.userId}/>
           <Contribute_1 path="/contributestep1" userId={this.state.userId} updateBoard={this.state.updateBoard} />
-          <Contribute_2 path="/contributestep2" recentBoardId={this.state.recentBoardId} updateBoard={this.state.updateBoard} />
+          <Contribute_2 path="/contributestep2" userId={this.state.userId} recentBoardId={this.state.recentBoardId} updateBoard={this.state.updateBoard} />
           <PersonalSpace path="/personalspace" />
           
           <NotFound default />
