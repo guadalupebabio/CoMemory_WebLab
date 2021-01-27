@@ -33,21 +33,53 @@ const router = express.Router();
 //   res.send(mydate);
 // });
 
-router.get("/boards", (req, res) => {
-	console.log(req.user._id);
-  	Board.find({creator_id: req.user._id}).then((boards) => res.send(boards));
+router.get('/boards', auth.ensureLoggedIn, (req, res) => {
+	Board.find({ creator_id: req.user._id }).then((boards) => res.send(boards));
 });
 
-router.post("/board", (req, res) => {
-  const newBoard = new Board({
-	creator_id: req.body.creator_id,
-    honoree_name: req.body.honoree_name,
-    date: req.body.date,
-    place: req.body.place,
-    msg: req.body.msg,
-  });
+router.post('/board', auth.ensureLoggedIn, (req, res) => {
+	const newBoard = new Board({
+		creator_id: req.body.creator_id,
+		honoree_name: req.body.honoree_name,
+		date: req.body.date,
+		place: req.body.place,
+		msg: req.body.msg
+	});
 
-  newBoard.save().then((board) => res.send(board));
+	newBoard.save().then((board) => res.send(board));
+});
+
+router.post('/uploadImage', auth.ensureLoggedIn, (req, res) => {
+		return uploadImagePromise(req.body.image);	
+	});
+	// .then((imageName) => {
+	// 	return Board.updateOne({ _id: req.body.board_id }, { imageName });
+	// })
+	// .then((board) => {
+	// 	res.send({}); // success!
+	// })
+	// .catch((err) => {
+	// 	console.log('ERR: upload image: ' + err);
+	// 	res.status(500).send({
+	// 		message: 'error uploading'
+	// 	});
+	// });
+
+router.get('/getImages', auth.ensureLoggedIn, (req, res) => {
+	Board.find({ isPublic: true }).then((boards) => {
+		Promise.all(
+			boards.map((board) => downloadImagePromise(board.imageName).catch((err) => 'Err: could not find image'))
+		)
+			.then((images) => {
+				res.send(images);
+			})
+			.catch((err) => {
+				console.log("ERR getImages this shouldn't happen");
+				res.status(500).send({
+					message: 'unknown error'
+				});
+			});
+	});
 });
 
 //initialize socket
