@@ -85,7 +85,6 @@ class Contribute_2 extends Component {
 					{/* <input type="range" defaultValue={state.shape} min="0" max="360" step="1" onChange={event => setState({ ...state, shape: event.target.value })}/> */}
 
 					<div className="cont2buttons">
-						<a href="/contributestep1">back</a>
 						<DownloadButton text="Download" linkDestination="/" />
 						<WhiteButton text="Submit" linkDestination="/personalspace" />
 					</div>
