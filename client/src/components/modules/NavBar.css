@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
-    position: relative;
+    /* position: relative; */
 }
 
 #Nav-container .Nav-link {
@@ -13,7 +13,7 @@
 }
 
 #Nav-container .Nav-link:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
     transition-duration: 0.5s;
 }
 

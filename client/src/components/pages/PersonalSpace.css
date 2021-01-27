@@ -9,6 +9,16 @@
     /* position: fixed; */
 }
 
+.upperleft {
+  width: 75%;
+  right: 50px;
+  margin: 2%;
+  
+  height: 5%;
+  font-size: 1rem;
+  /* border: 3px solid pink;   */
+}
+
   #HiUserPS{
     width: 100%;
     margin:0;

@@ -24,8 +24,8 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div id="Nav-container">
-				<h1 id="title">{this.props.title}</h1>
-				<div id="Nav-floatRight">
+				{/* <h1 id="title">{this.props.title}</h1> */}
+				{/* <div id="Nav-floatRight"> */}
 					<a className="Nav-link" href="/personalspace">
 						My Memories
 					</a>
@@ -50,7 +50,7 @@ class NavBar extends Component {
 						/>
 					)}
 				</div>
-			</div>
+			// </div>
 		);
 	}
 }
