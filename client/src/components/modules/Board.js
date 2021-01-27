@@ -22,7 +22,7 @@ class Board extends Component {
     render() {
       return (
         <div className="Board-styles">
-          <p>Name: {this.props.honoree_name}</p>
+          <p id="Board-name">{this.props.honoree_name}</p>
           <p>Date: {this.props.date}</p>
           <p>Place: {this.props.place}</p>
           <p>Message: {this.props.msg}</p>
