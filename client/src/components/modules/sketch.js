@@ -1,10 +1,13 @@
-function Sketch(p) {
+import { get, post } from '../../utilities';
+
+function Sketch(p, board_id) {
 
   let shape = 0;
   var t = 0;
+  let c;
 
   p.setup = function() {
-    p.createCanvas(500, 500);
+    c = p.createCanvas(500, 500);
     
     p.strokeWeight(1);
     p.noFill();
@@ -50,12 +53,14 @@ function Sketch(p) {
     p.endShape();
       }
     t += 1;
+    post('/api/uploadImage', {board_id: board_id, imageName: c.elt.toDataURL('image/png')}).then((board) => {
+      console.log("uploaded images");
+    })
   };
-
 
   document.getElementById("p5Wrapper-download-button").addEventListener ("click", () => {
     p.save('myCanvas.png');
   })
 };
 
-export default Sketch
+export default Sketch;
