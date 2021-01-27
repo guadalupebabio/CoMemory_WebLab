@@ -12,6 +12,7 @@ import { navigate } from '@reach/router';
 /**
  * 
  * Proptypes
+ * @param {string} userId
  * @param {string} linkDestination
  * @param {function} updateBoard updates which board has been uploaded most recently
  * 
@@ -28,7 +29,8 @@ class Contribute_1 extends Component {
 			honoree_name: '',
 			date: '',
 			place: '',
-			msg: ''
+			msg: '',
+			isPublic: true
 		};
 	}
 
@@ -84,10 +86,13 @@ class Contribute_1 extends Component {
 	};
 
 	render() {
-		if (this.props.userId) {
+		if (this.props.userId) { // checks if user is logged in
 			return (
 				<div id="Form-container" className="form">
-					<p>Hi, {this.state.username}</p>
+					<h1>Hi, {this.state.username}</h1>
+                    <p>
+                        Share a memory below.
+                    </p>
 					<form action="..." method="post">
 						<ul>
 							<label htmlFor="name">Name</label>
@@ -132,7 +137,12 @@ class Contribute_1 extends Component {
 				</div>
 			);
 		} else {
-			return <div> You need to log in</div>;
+			return (
+				<div className="u-flex u-flex-justifyCenter u-flex-alignCenter">
+					<div>Please log in to contribute!</div>
+					<WhiteButton text="Login" linkDestination="/register" />
+				</div>
+			);
 		}
 	}
 }
