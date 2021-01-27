@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 
+import "./Board.css";
+
 /**
  * 
  * Proptypes
@@ -19,7 +21,7 @@ class Board extends Component {
   
     render() {
       return (
-        <div>
+        <div className="Board-styles">
           <p>Name: {this.props.honoree_name}</p>
           <p>Date: {this.props.date}</p>
           <p>Place: {this.props.place}</p>
