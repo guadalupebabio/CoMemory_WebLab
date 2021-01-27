@@ -4,22 +4,22 @@ import RegLine from "../modules/RegLine";
 import WhiteButton from "../modules/WhiteButton.js";
 import { navigate } from '@reach/router';
 
-//import "../../utilities.css";
+// import "../../utilities.css";
 import "./Registration.css";
 
+/**
+ * 
+ * Proptypes
+ * @param {function} handleLogin
+ * @param {function} handleLogout
+ * 
+ */
 
-//TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "136526920473-t1lo12n7ojqbh3um8t84j3jdbc07i64n.apps.googleusercontent.com";
 
 class Registration extends Component {
   constructor(props) {
     super(props);
-    // Initialize Default State
-    //this.state = {};
-  }
-
-  componentDidMount() {
-    // remember -- api calls go here!
   }
 
   render() {

@@ -8,6 +8,8 @@ import './NavBar.css';
  * 
  * Proptypes
  * @param {string} userId
+ * @param {function} handleLogin
+ * @param {function} handleLogout
  * 
  */
 

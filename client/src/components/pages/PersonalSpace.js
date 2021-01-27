@@ -13,6 +13,8 @@ import { get, post } from '../../utilities';
  * 
  * Proptypes
  * @param userId
+ * @param {function} handleLogin
+ * @param {function} handleLogout
  * 
  */
 
@@ -70,7 +72,7 @@ class PersonalSpace extends Component {
 				<div>
 					{boardList}
 					<h1 id="header">Hi, {this.state.username}</h1>
-                    <NavBar />
+                    <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
 					<div id="personalfooter">
 						<WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
 					</div>
