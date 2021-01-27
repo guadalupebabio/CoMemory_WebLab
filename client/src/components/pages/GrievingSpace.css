@@ -10,14 +10,26 @@
   display: flex;
   flex-flow: row wrap;
   margin: 2%;
+  padding: 2%;
 }
 
-.gscontainer{
-    /* display: flex;
-    flex-direction: column; */
+#GS-container {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 5%;
+}
+
+#GS-title {
+    width: 100%;
+    margin:0;
+    padding-left: 0;
+    text-align: left;
+}
+
+#GS-contentContainer{
+  display: flex;
+  flex-flow: column nowrap;
     height: 100vh;
-    flex-direction: row;
-    /* border: 3px solid blue;    */
   }
 
 

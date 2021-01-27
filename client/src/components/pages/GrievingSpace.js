@@ -65,13 +65,15 @@ class GrievingSpace extends Component {
 			// ];
 		}
 		return (
-			<div className="gscontainer">
-				<NavBar
+            <div id="GS-container">
+                <NavBar
 					userId={this.props.userId}
 					handleLogin={this.props.handleLogin}
 					handleLogout={this.props.handleLogout}
 				/>
-				<p className="upperleft">A virtual space to honor and grieve loved ones</p>
+                <div id="GS-contentContainer">
+                <h1 id="GS-title">The Grieving Space</h1>
+				<p className="upperleft">A mosaic to commemorate loved ones, together.</p>
 				<div id="GrievingSpace-boardContainer">
                     {boardList}
                 </div>
@@ -81,6 +83,7 @@ class GrievingSpace extends Component {
 					this.state.flowers.map((flower) => <img src={flower} />)
 				)}
 			</div>
+            </div>
 
 			// <div className="gscontainer">
 			//     <p className="upperleft">A virtual space to honor and grieve  loved ones</p>
