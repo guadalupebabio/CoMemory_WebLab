@@ -29,9 +29,9 @@ class Home extends Component {
             <div id="Home-container" >
                 <div className="txtHome" >
                 
-                <h1>Co-Memory</h1>
+                <h1 className="Home-heading">Co-Memory</h1>
                 
-                <h1 >A virtual space to honor and grieve loved ones</h1>
+                <h1 className="Home-heading">A virtual space to honor and grieve loved ones</h1>
                 <div className="container" >
                 <p id="subtitle" >Grieving has changed. Approximately 420,000 Americans have died from the coronavirus, and more than 2 million people in the world have succumbed to the disease.  Let’s leverage the digital realm that keep us together to host the platform that will allow our community to commemorate those who are no longer with us.</p>
                 </div>

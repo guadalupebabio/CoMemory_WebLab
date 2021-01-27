@@ -17,7 +17,7 @@ html, body {
 }
 
 
-h1 {
+.Home-heading {
   font-size: 2.5rem;
   margin: 5px 20px 10px;
   padding: 0 20% 0 20%;

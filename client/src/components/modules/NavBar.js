@@ -24,26 +24,32 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div id="Nav-container">
-				<h1>{this.props.title}</h1>
-				<a className="Nav-link" href="/personalspace">My Memories</a>
-				<a className="Nav-link" href="/grievingspace">The Grieving Space</a>
-				{/* <WhiteButton className="Nav-button" text="My Memories" linkDestination="/personalspace" /> */}
-				<WhiteButton className="Nav-button" text="New Memory" linkDestination="/contributestep1" />
-				{this.props.userId ? (
-					<GoogleLogout
-						clientId={GOOGLE_CLIENT_ID}
-						buttonText="Logout"
-						onLogoutSuccess={this.props.handleLogout}
-						onFailure={(err) => console.log(err)}
-					/>
-				) : (
-					<GoogleLogin
-						clientId={GOOGLE_CLIENT_ID}
-						buttonText="Log in with Google"
-						onSuccess={this.props.handleLogin}
-						onFailure={(err) => console.log(err)}
-					/>
-				)}
+				<h1 id="title">{this.props.title}</h1>
+				<div id="Nav-floatRight">
+					<a className="Nav-link" href="/personalspace">
+						My Memories
+					</a>
+					<a className="Nav-link" href="/grievingspace">
+						The Grieving Space
+					</a>
+					{/* <WhiteButton className="Nav-button" text="My Memories" linkDestination="/personalspace" /> */}
+					<WhiteButton className="Nav-button" text="New Memory" linkDestination="/contributestep1" />
+					{this.props.userId ? (
+						<GoogleLogout
+							clientId={GOOGLE_CLIENT_ID}
+							buttonText="Logout"
+							onLogoutSuccess={this.props.handleLogout}
+							onFailure={(err) => console.log(err)}
+						/>
+					) : (
+						<GoogleLogin
+							clientId={GOOGLE_CLIENT_ID}
+							buttonText="Log in with Google"
+							onSuccess={this.props.handleLogin}
+							onFailure={(err) => console.log(err)}
+						/>
+					)}
+				</div>
 			</div>
 		);
 	}

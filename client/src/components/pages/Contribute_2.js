@@ -73,6 +73,7 @@ class Contribute_2 extends Component {
 			const state = { rotation: 160 };
 			return (
 				<div className="flowercontainer">
+					<h1>Your Memory</h1>
 					{boardList[boardList.length - 1]}
 					<div className="cont2flower">
 						<P5Wrapper

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
-    /* width: 100vw; */
+    position: relative;
 }
 
 #Nav-container .Nav-link {
@@ -17,11 +17,22 @@
     transition-duration: 0.5s;
 }
 
-#Nav-container h1 {
-    color: white;
+#Nav-container #Nav-floatRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    /* float: right; */
 }
 
-#Nav-container > * {
+#Nav-container #title {
+    justify-self: start;
+    align-self: baseline;
+    flex-shrink: 0;
+    padding: 0;
+    /* float: left; */
+}
+
+#Nav-container > *, #Nav-container #Nav-floatRight > * {
     margin: 0 10px;
 }
 
