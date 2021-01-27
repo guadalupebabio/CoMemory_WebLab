@@ -5,14 +5,14 @@ html, body {
 
 
 #Home-container {
-  /* position: fixed;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 0; 
   height: 100%;
   width: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../../../imgs/homeBackground.png") no-repeat center center fixed;
-  background-size: cover; */
+  background-size: cover; 
   text-align: center;
 }
 
@@ -34,16 +34,22 @@ h1 {
   width: 100%;
 }
 @media only screen and (max-width: 450px) {
-  
+  #Home-container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+      url("../../../../imgs/homeBackgroundPhone.png") no-repeat center center fixed;
+  }
+
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 5% 0 5%;
     /* background-color: blue; */
     padding: 0 5% 0 5%;
   }
   #subtitle {
     font-style: normal;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 0 7% 0 7%;
     line-height: 2;
   }

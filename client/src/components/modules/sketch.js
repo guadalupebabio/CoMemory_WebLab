@@ -9,7 +9,7 @@ function Sketch(p, board_id) {
   p.setup = function() {
     c = p.createCanvas(500, 500);
     
-    p.strokeWeight(1);
+    p.strokeWeight(2);
     p.noFill();
     var r = p.random(255);
     var g = p.random(255);
