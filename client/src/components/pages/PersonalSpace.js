@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import WhiteButton from '../modules/WhiteButton.js';
 import Board from '../modules/Board';
-import GoogleLogin, { GoogleLogout } from "react-google-login";
 import NavBar from '../modules/NavBar';
 
 import '../../utilities.css';
@@ -16,9 +15,6 @@ import { get, post } from '../../utilities';
  * @param userId
  * 
  */
-
-const GOOGLE_CLIENT_ID = "136526920473-t1lo12n7ojqbh3um8t84j3jdbc07i64n.apps.googleusercontent.com";
-
 
 class PersonalSpace extends Component {
 	constructor(props) {
@@ -75,16 +71,6 @@ class PersonalSpace extends Component {
 					{boardList}
 					<h1 id="header">Hi, {this.state.username}</h1>
                     <NavBar />
-					{/* <div className="upperright">
-						<WhiteButton text="New" linkDestination="/contributestep1" />
-                        <GoogleLogout
-                      clientId={GOOGLE_CLIENT_ID}
-                      buttonText="Logout"
-                      onLogoutSuccess={this.props.handleLogout}
-                      onFailure={(err) => console.log(err)}
-                    />
-					</div> */}
-
 					<div id="personalfooter">
 						<WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
 					</div>
