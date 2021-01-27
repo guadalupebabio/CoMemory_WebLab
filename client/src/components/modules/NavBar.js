@@ -24,8 +24,8 @@ class NavBar extends Component {
 		return (
 			<div id="Nav-container">
 				<WhiteButton className="Nav-button" text="New Memory" linkDestination="/contributestep1" />
-				<a href="/personalspace">My Memories</a>
-				<a href="/grievingspace">The Grieving Space</a>
+				<a className="Nav-link" href="/personalspace">My Memories</a>
+				<a className="Nav-link" href="/grievingspace">The Grieving Space</a>
 				{/* <WhiteButton className="Nav-button" text="My Memories" linkDestination="/personalspace" /> */}
 				{this.props.userId ? (
 					<GoogleLogout
