@@ -81,6 +81,27 @@ class PersonalSpace extends Component {
 			);
 		}
 	}
+    
+
+    // render() {
+
+    //     return (
+    //         <div className="pscontainer">
+    //             <div className="upperleft"><h2>Hi, {this.state.username}</h2></div>
+                
+    //             <div class="upperright">
+                
+    //               <WhiteButton text="New" linkDestination="/contributestep1" /> <a href="/login">Log out</a> 
+                  
+    //             </div> 
+                
+    //             <div id="personalfooter">
+    //             <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
+    //             </div>
+                
+    //         </div>
+    //     )
+    // }
 }
 
 export default PersonalSpace;

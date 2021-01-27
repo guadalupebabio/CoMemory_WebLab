@@ -39,9 +39,21 @@ class GrievingSpace extends Component {
                 <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
                 {this.state.flowers.length === 0 ? "Contribute a memory" : this.state.flowers.map((flower) => (<img src={flower}></img>))}
                 <p id="header">A virtual space to honor and grieve loved ones</p>
-                <p id="footer">Hover over image to visualize text</p>
-            </div>
-        )
+            </div>   
+
+            // <div className="gscontainer">
+            //     <p className="upperleft">A virtual space to honor and grieve  loved ones</p>
+            //     <div className="upperright">
+                
+            //     {this.state.isLoggedIn ? (
+            //         <WhiteButton text="New" linkDestination="/contributestep1" />
+            //       ):(
+            //         <WhiteButton text="New" linkDestination="/login" />
+            //       )}
+            //     </div>
+            //     <p id="footer">Hover over image to visualize text</p>
+            // </div>
+        ) 
     }
 }
 

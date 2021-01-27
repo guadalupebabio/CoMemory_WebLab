@@ -1,41 +1,54 @@
-#Registration-container {
+/* #Registration-container {
     position: fixed;
     top:0;
     left:0;
     height: 100vh;
     width: 100vw;
-}
-
-/* Style Input */
+} */
 .registration {
-    width: 100%;
-    font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+    
+  display: row;
+  margin-top: 20%;
+  text-align: center;
+    
 }
-
+h2 {
+    font-size: 2.5rem;
+  }
 input[type=string] {
-    width: 15%;
+    
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: black;
+    /* background-color: red; */
     border-bottom: 2px solid white;
 }
 
 input[type=password] {
-    width: 15%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: black;
+    /* background-color: red; */
     border-bottom: 2px solid white;
 }
 #smalltxt {
     margin: 10px;
+    font-size: 0.8rem;
   }
   a {
     color: white;
     text-decoration:none
+  }
+
+  @media (max-width: 1000px) {
+
   }
 
