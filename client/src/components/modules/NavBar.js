@@ -23,7 +23,7 @@ class NavBar extends Component {
 	render() {
 		return (
 			<div className="upperright">
-				<WhiteButton text="New" linkDestination="/contributestep1" />
+				<WhiteButton text="New Memory" linkDestination="/contributestep1" />
 				{this.props.userId ? (
 					<GoogleLogout
 						clientId={GOOGLE_CLIENT_ID}
