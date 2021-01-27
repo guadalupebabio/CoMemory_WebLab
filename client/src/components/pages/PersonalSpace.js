@@ -69,7 +69,7 @@ class PersonalSpace extends Component {
 			} else {
 				boardList = [
 					<div className="Board-styles">Create a memory.</div>,
-					<WhiteButton text="New" linkDestination="/contributestep1" />
+					
 				];
 			}
 
