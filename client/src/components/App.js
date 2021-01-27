@@ -25,6 +25,7 @@ class App extends Component {
     super(props);
     this.state = {
       userId: undefined,
+      recentBoardId: '',
     };
   }
 
@@ -53,6 +54,12 @@ class App extends Component {
     post("/api/logout");
   };
 
+  updateBoard = (id) => {
+    this.setState({
+      recentBoardId: id,
+    })
+  }
+
   render() {
     return (
       <>
@@ -66,8 +73,8 @@ class App extends Component {
           />
           <LogIn path="/login" />
           <GrievingSpace path="/grievingspace" />
-          <Contribute_1 path="/contributestep1" />
-          <Contribute_2 path="/contributestep2" userId={this.state.userId} />
+          <Contribute_1 path="/contributestep1" userId={this.state.userId} updateBoard={this.state.updateBoard} />
+          <Contribute_2 path="/contributestep2" recentBoardId={this.state.recentBoardId} updateBoard={this.state.updateBoard} />
           <PersonalSpace path="/personalspace" />
           
           <NotFound default />
