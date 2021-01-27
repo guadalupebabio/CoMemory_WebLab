@@ -37,6 +37,10 @@ router.get('/boards', auth.ensureLoggedIn, (req, res) => {
 	Board.find({ creator_id: req.user._id }).then((boards) => res.send(boards));
 });
 
+router.get('/allboards', (req, res) => {
+	Board.find({}).then((boards) => res.send(boards));
+});
+
 router.post('/board', auth.ensureLoggedIn, (req, res) => {
 	const newBoard = new Board({
 		creator_id: req.body.creator_id,
@@ -67,7 +71,7 @@ router.post('/uploadImage', auth.ensureLoggedIn, (req, res) => {
 		});
 });
 
-router.get('/getImages', auth.ensureLoggedIn, (req, res) => {
+router.get('/getImages', (req, res) => {
 	Board.find({ isPublic: true }).then((boards) => {
 		Promise.all(
 			boards.map((board) => downloadImagePromise(board.imageName).catch((err) => 'Err: could not find image'))
