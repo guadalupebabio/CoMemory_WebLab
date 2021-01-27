@@ -22,7 +22,6 @@ class Home extends Component {
 
     render() {
         let goTo;
-        console.log("userId: " + this.props.userId);
         this.props.userId ? goTo = "/contributestep1" : goTo = "/register";
         return (
             <div id="Home-container" className="u-flexColumn u-flex-alignCenter u-flex-justifyCenter">
