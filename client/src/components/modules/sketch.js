@@ -6,7 +6,7 @@ function Sketch(p) {
   p.setup = function() {
     p.createCanvas(500, 500);
     
-    p.strokeWeight(1);
+    p.strokeWeight(2);
     p.noFill();
     var r = p.random(255);
     var g = p.random(255);
