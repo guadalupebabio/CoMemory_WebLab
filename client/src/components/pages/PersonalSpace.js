@@ -28,13 +28,7 @@ class PersonalSpace extends Component {
 	}
 
 	componentDidMount() {
-		document.title = 'Your Memories';
-		get('/api/whoami').then((user) => {
-			if (user.name) {
-				// they are registed in the database, and currently logged in.
-				this.setState({ username: user.name });
-			}
-		});
+		document.title = 'My Memories';
 
 		get('/api/boards').then((boardObjs) => {
 			console.log('got list of boards');
@@ -71,7 +65,7 @@ class PersonalSpace extends Component {
 			return (
 				<div>
 					{boardList}
-					<h1 id="header">Hi, {this.state.username}</h1>
+					<h1 id="header">My Memories</h1>
                     <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
 					<div id="personalfooter">
 						<WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
