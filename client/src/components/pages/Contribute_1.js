@@ -89,7 +89,7 @@ class Contribute_1 extends Component {
 		if (this.props.userId) { // checks if user is logged in
 			return (
 				<div id="Form-container" className="form">
-					<h1>Hi, {this.state.username}</h1>
+					<h1 id="newTitle">Hi, {this.state.username}</h1>
                     <p>
                         Share a memory below.
                     </p>

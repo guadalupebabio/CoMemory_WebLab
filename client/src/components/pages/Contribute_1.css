@@ -21,6 +21,13 @@ input[type=text] {
   font-size: 0.8rem;
 }
 
+#newTitle{
+  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   #Form-container{
     

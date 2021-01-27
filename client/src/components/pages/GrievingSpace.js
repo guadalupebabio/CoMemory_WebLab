@@ -35,10 +35,11 @@ class GrievingSpace extends Component {
 
     render() {
         return (
-            <div id="" className="">
+            <div className="gscontainer" >
                 <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
-                {this.state.flowers.length === 0 ? "Contribute a memory" : this.state.flowers.map((flower) => (<img src={flower}></img>))}
-                <p id="header">A virtual space to honor and grieve loved ones</p>
+                <p className="upperleft">A virtual space to honor and grieve loved ones</p>
+                {this.state.flowers.length === 0 ? <p className="middle">Contribute a memory</p>: this.state.flowers.map((flower) => (<img src={flower}></img>))}
+                
             </div>   
 
             // <div className="gscontainer">

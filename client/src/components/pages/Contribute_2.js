@@ -51,7 +51,7 @@ class Contribute_2 extends Component {
 	}
 
 	render() {
-		console.log(CLOSE);
+		// console.log(CLOSE);
 		if (this.props.userId) {
 			let boardList = null;
 			const hasBoards = this.state.boards.length !== 0;

@@ -3,7 +3,7 @@
   position: absolute;  
   top:10%;
   right: 10%;
-  /* border: 3px solid red;   */
+  /* border: 3px solid red;    */
   width: 40%;
   height: 80%;
   
@@ -19,7 +19,7 @@
   margin:10%;
   width: 80%;
   height: 80vh;
-  /* border: 3px solid red;   */
+  /* border: 3px solid red;    */
 }
 .cont2buttons{
   margin: 0;
@@ -29,13 +29,30 @@
   /* border: 3px solid red;   */
 }
   
+@media only screen and (max-width: 800px) {
+  .cont2flower {
+    /* position: absolute;  */
+    top: 20%;
+    margin-left: 10%;
+    
+    /* border: 3px solid blue;    */
+    width: 80%;
+    height: 50%;
+   
+    
+  }
+
+
+}
+
+
 @media only screen and (max-width: 450px) {
   .flowercontainer {
     position: relative;
     font-size: 1rem;
     /* border: 3px solid #73AD21;  */
     margin: 10%;
-    height: 90vh; 
+    height: 100vh; 
   } 
 
 .cont2txt{
@@ -43,17 +60,19 @@
    /* border: 3px solid #73AD21;   */
 }
 .cont2flower {
-  top:0;
+  top: 20%;
+  /* margin-left: 10%; */
   width: 100%;
   align-items: center;
      /* border: 3px solid #73AD21;   */
 }
 .cont2buttons{
   
-  position: absolute; 
+  /* position: absolute;  */
   width: 100%;
+
   bottom: 0%;
-  /* border: 3px solid pink;    */
+   /* border: 3px solid pink;     */
 }
   }
   

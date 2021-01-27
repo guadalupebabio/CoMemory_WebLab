@@ -1,9 +1,4 @@
-#header {
-    top: 8%;
-    left: 5%;
-    font-size: 1rem;
-    /* position: fixed; */
-}
+
 #footer {
     bottom: 5%;
     left: 5%;
@@ -11,24 +6,33 @@
     font-size: 0.8rem;
 }
 .gscontainer{
-    display: flex;
+    /* display: flex;
+    flex-direction: column; */
     height: 100vh;
     flex-direction: row;
-    /* border: 3px solid blue;   */
+    /* border: 3px solid blue;    */
   }
 
-.gscontainer > .upperright {
-    width: 10%;
-    margin: 2%;
-    top: 5%;
-    height: 5%;
-    justify-content: flex-end;
-    /* border: 3px solid red;   */
-  }
-  .gscontainer > .upperleft {
-    width: 90%;
+
+  .upperleft {
+    
+    
+    width: 75%;
     right: 50px;
     margin: 2%;
+    
+    height: 5%;
+    font-size: 1rem;
+    /* border: 3px solid pink;   */
+  }
+
+  .middle {
+    
+    width: 75%;
+    right: 50px;
+    margin: 2%;
+    margin-top: 20%;
+    
     height: 5%;
     font-size: 1rem;
     /* border: 3px solid red;   */
@@ -46,8 +50,8 @@
     .gscontainer > .upperright {
       margin: 0; 
     }
-    #footer {
-      margin-left: 5%;
-  }
+    .middle {
+      margin-top: 50%;
+    }
 
   } 

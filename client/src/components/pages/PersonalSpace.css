@@ -2,16 +2,41 @@
   canvas {
     display: block;
   }
+  #header {
+    top: 8%;
+    left: 5%;
+    font-size: 1rem;
+    /* position: fixed; */
+}
+
+  #HiUserPS{
+    width: 100%;
+    margin:0;
+    padding-left: 0;
+    text-align: left;
+  }
+
+  #pslist{
+    margin-top: 15%;
+    margin: 3%;
+    margin-bottom: 0%;
+    flex-direction: row;
+    /* border: 3px solid blue;   */
+
+  }
+
   .pscontainer{
     display: flex;
     height: 100vh;
-    flex-direction: row;
-    /* border: 3px solid #73AD21;   */
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid #73AD21;    */
   }
 
 .pscontainer > .upperright {
     width: 25%;
-    /* margin: 2%; */
+    
     top: 5%;
     height: 5%;
     justify-content: flex-end;
@@ -73,12 +98,16 @@
   @media only screen and (max-width: 450px) {
 
     .pscontainer{
-      margin: 10%;
+      
+      margin: 10% ;
+      margin-top: 30%;
       flex-direction: column;
+      /* background-color: pink; */
     }
     .pscontainer > .upperright {
-      width: 100%;
+      width: 70%;
       margin: 0;
+      /* background-color: tomato; */
     }
   
     .pscontainer > .upperleft {
@@ -95,7 +124,12 @@
       
       font-size: 12px;
       /* border: 3px solid #73AD21;   */
-    
+    }
+    #pslist{
+      
+      margin: 5%;
+      /* border: 3px solid red;    */
+  
     }
 
   }

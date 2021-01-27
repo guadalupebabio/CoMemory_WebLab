@@ -36,6 +36,15 @@ class PersonalSpace extends Component {
 				this.setState({ boards: this.state.boards.concat([ boardObj ]) });
 			});
 		});
+		get('/api/whoami').then((user) => {
+			if (user.name) {
+				// they are registed in the database, and currently logged in.
+				this.setState({
+					username: user.name,
+					creator_id: user._id
+				});
+			}
+		});
 	}
 
 	render() {
@@ -44,6 +53,7 @@ class PersonalSpace extends Component {
 			const hasBoards = this.state.boards.length !== 0;
 			if (hasBoards) {
 				boardList = this.state.boards.map((boardObj) => (
+					
 					<Board
 						key={`Board_${boardObj._id}`}
 						_id={boardObj._id}
@@ -53,6 +63,7 @@ class PersonalSpace extends Component {
 						place={boardObj.place}
 						msg={boardObj.msg}
 					/>
+					
 				));
 				boardList.reverse();
 			} else {
@@ -63,13 +74,19 @@ class PersonalSpace extends Component {
 			}
 
 			return (
-				<div>
+				<div className="pscontainer">
+					<h1 id="HiUserPS">Hi, {this.state.username}</h1>
+					<h2 id="header">My Memories</h2> 
+					<div id="pslist"> 
 					{boardList}
-					<h1 id="header">My Memories</h1>
+					
+					</div>
+					
                     <NavBar userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
-					<div id="personalfooter">
+					<div >
 						<WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
 					</div>
+					
 				</div>
 			);
 		} else {
@@ -93,11 +110,7 @@ class PersonalSpace extends Component {
                 
     //               <WhiteButton text="New" linkDestination="/contributestep1" /> <a href="/login">Log out</a> 
                   
-    //             </div> 
-                
-    //             <div id="personalfooter">
-    //             <WhiteButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
-    //             </div>
+    //             
                 
     //         </div>
     //     )
