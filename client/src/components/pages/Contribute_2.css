@@ -1,70 +1,60 @@
-/* For mobile phones: */
-div.flowercontainer {
+ /* For desktop: */
+ .cont2flower {
+  position: absolute;  
+  top:10%;
+  right: 10%;
+  /* border: 3px solid red;   */
+  width: 40%;
+  height: 80%;
+  
+}
+.cont2txt{
+  width: 50%;
+  height: 70%;
+  /* border: 3px solid red;   */
+}
+.flowercontainer {
+  font-size: 1rem;
+  flex-direction: column;
+  margin:10%;
+  width: 80%;
+  height: 80vh;
+  /* border: 3px solid red;   */
+}
+.cont2buttons{
+  margin: 0;
+  position: absolute; 
+  width: 50%;
+  bottom: 10%;
+  /* border: 3px solid red;   */
+}
+  
+@media only screen and (max-width: 450px) {
+  .flowercontainer {
     position: relative;
-    margin-left: 0px;
-    margin-top: 50px;
-    /* border: 3px solid #73AD21; */
+    font-size: 1rem;
+    /* border: 3px solid #73AD21;  */
+    margin: 10%;
+    height: 90vh; 
   } 
 
-div.cont2txt{
+.cont2txt{
   width: 100%;
-  /* border: 3px solid #73AD21; */
+   /* border: 3px solid #73AD21;   */
 }
-
-
-div.cont2flower {
+.cont2flower {
   top:0;
   width: 100%;
   align-items: center;
-  /* border: 3px solid #73AD21; */
+     /* border: 3px solid #73AD21;   */
 }
+.cont2buttons{
   
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-  div.flowercontainer {
-    width: 100%;
-    margin-left: 10%;
-    margin-top: 50px;
-  }
-  div.cont2flower {
-    
-    top:0;
-    right: 0;
-    /* border: 3px solid blue; */
-    width: 100%;
-    
-  }
-  div.cont2txt{
-    width: 80%;
-    /* border: 3px solid #73AD21; */
+  position: absolute; 
+  width: 100%;
+  bottom: 0%;
+  /* border: 3px solid pink;    */
+}
   }
   
-  }
-  
-    @media only screen and (min-width: 1150px) {
-      /* For desktop: */
-      div.cont2flower {
-        position: absolute; 
-        top:0;
-        right: 0;
-        /* border: 3px solid red; */
-        width: 40%;
-        height: 100%;
-        
-      }
-      div.cont2txt{
-        width: 50%;
-        height: 70%;
-        /* border: 3px solid #73AD21; */
-      }
-      div.flowercontainer {
-        width: 85%;
-        height: 600px;
-        /* border: 3px solid #73AD21; */
-      }
-      div.cont2buttons{
-        position: absolute; 
-        bottom: 20px;
-        /* border: 3px solid #73AD21; */
-      }
-      }
+

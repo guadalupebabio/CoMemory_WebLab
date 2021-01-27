@@ -1,8 +1,10 @@
 .HomeButton-style {
-    border: var(--white) 2px solid;
+    border: var(--white) 0.1rem solid;
     border-radius: 25px;
     padding: var(--s) var(--l);
-    margin: 15px 10px 0px;
+    height: 100%;
+    margin: 1.5% 1% 0; 
+    font-size: 0.8rem;
 
     color: var(--white);
     font-family: 'Open Sans', sans-serif;

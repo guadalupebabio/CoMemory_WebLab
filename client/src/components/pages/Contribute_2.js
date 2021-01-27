@@ -38,12 +38,11 @@ class Contribute_2 extends Component {
         return (
             
             <div className="flowercontainer">
-                <div class="cont2txt"> 
-                <p>Name: jghvsdbcljbeaiorbvliesr {this.state.name}</p>
-                <p>Date: jghvsdbcljbeaiorbvliesr {this.state.date}</p>
-                <p>Place: jghvsdbcljbeaiorbvliesr {this.state.place}</p>
-                <p>Message: jghvsdbcljbea iorbvliesrjghvsdbcljbeaio rbvliesrjghvsdbcljbeai orbvliesrjghv {this.state.message}</p>
-
+                <div className="cont2txt"> 
+                <p>Name: {this.state.name}</p>
+                <p>Date: {this.state.date}</p>
+                <p>Place:  {this.state.place}</p>
+                <p>Message: {this.state.message}</p>
                 </div >
 
                 <div class="cont2flower"><P5Wrapper sketch={sketch} shape={state.shape} /></div>

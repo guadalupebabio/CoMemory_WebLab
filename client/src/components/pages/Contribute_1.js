@@ -64,7 +64,7 @@ class Contribute_1 extends Component {
 
     render() {
         return (
-            <div id="Form-container" className="form">
+            <div id="Form-container" >
                     <form action="..." method="post"> 
                         <ul>
                             <label for="name">Name</label>

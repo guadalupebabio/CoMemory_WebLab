@@ -1,12 +1,33 @@
-/* Style Body */
-  html, body {
-    margin: 30;
-    padding: 50px;
-    background-color: black;
-  }
+  
   canvas {
     display: block;
   }
+  .pscontainer{
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    /* border: 3px solid #73AD21;   */
+  }
+
+.pscontainer > .upperright {
+    width: 25%;
+    /* margin: 2%; */
+    top: 5%;
+    height: 5%;
+    justify-content: flex-end;
+    /* border: 3px solid red;   */
+  }
+
+  .pscontainer > .upperleft {
+    width: 75%;
+    right: 50px;
+    margin: 2%;
+    margin-left: 5%;
+    height: 5%;
+    font-size: 1rem;
+    /* border: 3px solid red;   */
+  }
+  
   
   /* Style Entries */
   .comment {
@@ -36,15 +57,47 @@
     content: "";
     clear: both;
     display: center;
-    border: 3px solid #73AD21;
+    /* border: 3px solid #73AD21; */
   }
   #personalfooter{
-    bottom: 5%;
-    margin-left: 10%;
+    bottom: 0%;
+    margin-left: 3%;
+    width: 100%;
     left: 5%;
     position: fixed;
     font-size: 12px;
+    /* border: 3px solid #73AD21;   */
   
+  }
+
+  @media only screen and (max-width: 450px) {
+
+    .pscontainer{
+      margin: 10%;
+      flex-direction: column;
+    }
+    .pscontainer > .upperright {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .pscontainer > .upperleft {
+      width: 90%;
+      
+      margin: 0%;
+      
+    }
+    #personalfooter{
+      bottom: 0%;
+      margin-left: 5%;
+      width: 80%;
+      left: 5%;
+      
+      font-size: 12px;
+      /* border: 3px solid #73AD21;   */
+    
+    }
+
   }
   
 

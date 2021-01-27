@@ -1,37 +1,52 @@
-#Home-container {
-    position: fixed;
-    top:0;
-    left:0;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../../imgs/homeBackground.png") no-repeat center center fixed;
-    background-size: cover;
-    text-align: center;
+html, body {
+    background-color: black;
+    /* border: 3px solid #73AD21;  */
 }
 
-h1{
-    font-size: 32px;
-    margin: 20px 50px 15px; 
+
+#Home-container {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../../../imgs/homeBackground.png") no-repeat center center fixed;
+  background-size: cover; */
+  text-align: center;
+}
+
+
+h1 {
+  font-size: 2.5rem;
+  margin: 5px 20px 10px;
+  padding: 0 20% 0 20%;
 }
 #subtitle {
-    font-style: normal;
-    font-size: 12px;
+  font-style: normal;
+  font-size: 1rem;
+  padding: 0 20% 0 20%;
+  line-height: 2;
+}
+.txtHome {
+  margin-top: 20%;
+  display: row;
+  width: 100%;
+}
+@media only screen and (max-width: 450px) {
+  .txtHome {
     
-    /* margin: 0px 450px 25px;  */
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 5% 0 5%;
+    /* background-color: blue; */
+    padding: 0 5% 0 5%;
+  }
+  #subtitle {
+    font-style: normal;
+    font-size: 1rem;
+    padding: 0 7% 0 7%;
     line-height: 2;
   }
-
-  /* For mobile phones: */
-  #txtHome  {
-    width:90%;
-    }
-
-  @media only screen and (min-width: 600px) {
-    /* For tablets: */
-    #txtHome { width:70%;}
-    }
-
-  @media only screen and (min-width: 768px) {
-    /* For desktop: */
-    #txtHome  { width:50%;}
-    }
+}

@@ -23,11 +23,10 @@ class Registration extends Component {
 
   render() {
     return (
-      <>
-      <div id="Registration-container" className="registration">
-        <h1>Register</h1>
+      <div   className="registration">
+        <h2>Register</h2>
         {/* TODO: fix action attribute */}
-          <form action="..." method="post"> 
+        <form action="..." method="post"> 
             <ul>
               <li>
                 <RegLine typeValue="string" idValue="email" placeholderValue="somebody@example.com" />
@@ -60,12 +59,11 @@ class Registration extends Component {
                 <p id="smalltxt">already have an account? <b><a href="/login">Log in</a></b></p>
               </li>
             </ul>
-          </form>
+          </form> 
           
       </div>
       
-       
-      </>
+    
     );
   }
 }

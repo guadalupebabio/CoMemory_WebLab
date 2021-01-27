@@ -24,8 +24,8 @@ class LogIn extends Component {
   render() {
     return (
       <>
-      <div id="Registration-container" className="registration">
-        <h1>Log In</h1>
+      <div className="registration">
+        <h2>Log In</h2>
         {/* TODO: fix action attribute */}
           <form action="..." method="post"> 
             <ul>

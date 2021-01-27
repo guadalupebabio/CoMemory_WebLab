@@ -1,97 +1,44 @@
-html, head {
-  background-color: black;
+#Form-container{
+  margin-top: 10%;
+  margin-left: 10%;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 80%;
 }
-
-html, body {
-  padding: 30px;
-  background-color: black;
-  color: white;
-}
-#hiUser{
-  text-align: left;
-}
-
-
-/* Style the navigation bar */
-.navbar {
-  width: 100%;
-  background-color: black;
-  overflow: auto;
-}
-
-/* Navbar links */
-.navbar a {
-  float: left;
-  text-align: center;
-  padding: 30px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Navbar links on mouse-over */
-.navbar a:hover {
-  font-weight:bold;
-}
-
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-  }
-}
-
-/* Right-aligned section inside the top navigation */
-.navbar-right {
-  float: right;
-}
-
-
-/* Style Form */
-.form {
-  color: white;
-  overflow: auto;
-  float: left;
-  text-align: justify;
-  text-decoration: none;
-  font-size: 17px;
+label{
+  font-size: 1rem;
 }
 
 input[type=text] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  margin-bottom: 50px;
+  width: 100%;
+  padding: 20px;  
+  /* margin: 8px 0; */
+  margin-bottom: 8%;
   box-sizing: border-box;
   border: none;
   background-color: black;
   border-bottom: 2px solid white;
-  font-size: 14px;
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #Form-container{
+    
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+  }
 }
 
 
+@media only screen and (max-width: 450px) {
+  #Form-container{
+    
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+  }
+}
 
-
-    /* For mobile phones: */
-    .form  {
-      margin-left: 0px;
-      margin-top: 50px;
-      width:600px;
-      }
-  
-    @media only screen and (min-width: 600px) {
-      /* For tablets: */
-      .form  { 
-        margin-left: 10%;
-        margin-top: 50px;
-        width:170%;
-      }
-      }
-  
-    @media only screen and (min-width: 768px) {
-      /* For desktop: */
-      .form  { width:1000px;}
-      }
 
 

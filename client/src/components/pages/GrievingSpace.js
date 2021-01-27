@@ -19,9 +19,9 @@ class GrievingSpace extends Component {
 
     render() {
         return (
-            <div id="" className="">
-                <p id="header">A virtual space to honor and grieve  loved ones</p>
-                <div class="upperright">
+            <div className="gscontainer">
+                <p className="upperleft">A virtual space to honor and grieve  loved ones</p>
+                <div className="upperright">
                 {/* <WhiteButton text="New" linkDestination="/contributestep1" /> */}
                 {this.state.isLoggedIn ? (
                     <WhiteButton text="New" linkDestination="/contributestep1" />

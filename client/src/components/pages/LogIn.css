@@ -1,14 +1,14 @@
-#Registration-container {
+/* #Registration-container {
     position: fixed;
     top:0;
     left:0;
     height: 100vh;
-    /* width: 100vw; */
+    width: 100vw; 
     width: 100%;
-}
+} */
 
 /* Style Input */
-.registration {
+/* .registration {
     margin-top: 20%;
     width: 100%;
     color: white;
@@ -18,8 +18,8 @@
     padding: 0px;
     text-decoration: none;
     font-size: 17px;
-}
-
+} */
+/* 
 input[type=string] {
     width: 250px;
     padding: 12px 20px;
@@ -38,5 +38,5 @@ input[type=password] {
     border: none;
     background-color: black;
     border-bottom: 2px solid white;
-}
+} */
 
