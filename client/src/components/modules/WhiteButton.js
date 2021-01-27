@@ -9,6 +9,7 @@ import "./WhiteButton.css";
  * Proptypes
  * @param {string} text
  * @param {string} linkDestination
+ * @param {function} onClick
  * 
  */
 
