@@ -68,15 +68,15 @@ class PersonalSpace extends Component {
 				boardList.reverse();
 			} else {
 				boardList = [
-					<div className="Board-styles">Create a memory.</div>,
+					<a href="/contributestep1"><div className="Board-styles">Create a memory.</div></a>,
 					
 				];
 			}
 
 			return (
 				<div className="pscontainer">
-					<NavBar title="My Memories" userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
-					<h1 id="HiUserPS">Hi, {this.state.username}</h1>
+					<NavBar title={this.state.username} userId={this.props.userId} handleLogin={this.props.handleLogin} handleLogout={this.props.handleLogout} />
+					{/* <h1 id="HiUserPS">Hi, {this.state.username}</h1> */}
 					<h2 id="header">My Memories</h2> 
 					<div id="pslist"> 
 					<div id="PersonalSpace-boardContainer">
