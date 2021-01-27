@@ -77,26 +77,13 @@ class GrievingSpace extends Component {
 				<div id="GrievingSpace-boardContainer">
                     {boardList}
                 </div>
-				{this.state.flowers.length === 0 ? (
+				{/* {this.state.flowers.length === 0 ? (
 					<p className="middle">Contribute a memory</p>
 				) : (
 					this.state.flowers.map((flower) => <img src={flower} />)
-				)}
+				)} */}
 			</div>
             </div>
-
-			// <div className="gscontainer">
-			//     <p className="upperleft">A virtual space to honor and grieve  loved ones</p>
-			//     <div className="upperright">
-
-			//     {this.state.isLoggedIn ? (
-			//         <WhiteButton text="New" linkDestination="/contributestep1" />
-			//       ):(
-			//         <WhiteButton text="New" linkDestination="/login" />
-			//       )}
-			//     </div>
-			//     <p id="footer">Hover over image to visualize text</p>
-			// </div>
 		);
 	}
 }
