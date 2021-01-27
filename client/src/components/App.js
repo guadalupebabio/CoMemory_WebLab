@@ -75,7 +75,7 @@ class App extends Component {
           <GrievingSpace path="/grievingspace" userId={this.state.userId}/>
           <Contribute_1 path="/contributestep1" userId={this.state.userId} updateBoard={this.state.updateBoard} />
           <Contribute_2 path="/contributestep2" userId={this.state.userId} recentBoardId={this.state.recentBoardId} updateBoard={this.state.updateBoard} />
-          <PersonalSpace path="/personalspace" />
+          <PersonalSpace path="/personalspace" userId={this.state.userId} />
           
           <NotFound default />
         </Router>
