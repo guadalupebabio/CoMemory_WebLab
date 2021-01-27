@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HomeButton from "../modules/HomeButton.js";
+import P5Wrapper from 'react-p5-wrapper';
 
 import "../../utilities.css";
 import "./Home.css";
@@ -23,6 +24,7 @@ class Home extends Component {
     render() {
         let goTo;
         this.props.userId ? goTo = "/contributestep1" : goTo = "/register";
+        const state = { rotation: 160 };
         return (
             <div id="Home-container" >
                 <div className="txtHome" >
@@ -36,6 +38,7 @@ class Home extends Component {
                 <HomeButton text="EXPLORE THE GRIEVING SPACE" linkDestination="/grievingspace" />
                 {/* <HomeButton text="MAKE A CONTRIBUTION" linkDestination={goTo} /> */}
                 <HomeButton text="MAKE A CONTRIBUTION" linkDestination="/register" />
+                {/* <P5Wrapper sketch={(p) => {return sketch(p);}} shape={this.state.shape}/>  */}
                 </div>
                 
             </div>

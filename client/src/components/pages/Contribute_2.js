@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WhiteButton from '../modules/WhiteButton.js';
 import DownloadButton from '../modules/DownloadButton.js';
-import P5Wrapper, {CLOSE} from 'react-p5-wrapper';
+import P5Wrapper from 'react-p5-wrapper';
 import sketch from '../modules/sketch';
 import Board from '../modules/Board';
 
