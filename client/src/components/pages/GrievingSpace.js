@@ -59,10 +59,10 @@ class GrievingSpace extends Component {
 			));
 			boardList.reverse();
 		} else {
-			boardList = [
-				<div className="Board-styles">Create a memory.</div>,
-				<WhiteButton text="New" linkDestination="/contributestep1" />
-			];
+			// boardList = [
+			// 	<div className="Board-styles">Create a memory.</div>,
+			// 	<WhiteButton text="New" linkDestination="/contributestep1" />
+			// ];
 		}
 		return (
 			<div className="gscontainer">
